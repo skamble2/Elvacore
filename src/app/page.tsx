@@ -1,18 +1,58 @@
+import Link from "next/link";
+import { site } from "@/content";
+import { Container } from "@/components/Container";
+
 export default function Home() {
+  const { home } = site;
+
   return (
-    <main className="flex flex-1 flex-col items-center justify-center bg-zinc-50 px-6 text-center dark:bg-black">
-      <h1 className="text-5xl font-semibold tracking-tight text-zinc-900 sm:text-6xl dark:text-zinc-50">
-        Elvacore
-      </h1>
-      <p className="mt-4 text-lg text-zinc-600 dark:text-zinc-400">
-        Coming soon.
-      </p>
-      <a
-        href="/downloads"
-        className="mt-8 text-sm font-medium text-zinc-900 underline underline-offset-4 dark:text-zinc-50"
-      >
-        Downloads
-      </a>
-    </main>
+    <>
+      <section className="bg-gradient-to-b from-brand-50 to-surface">
+        <Container className="grid items-center gap-10 py-20 md:grid-cols-2 md:py-28">
+          <div>
+            <h1 className="text-4xl font-semibold tracking-tight text-brand-900 sm:text-5xl">
+              {home.heroTitle ?? "Elvacore Technologies"}
+            </h1>
+            {home.heroSubtitle && (
+              <p className="mt-4 max-w-xl text-lg text-ink-muted">
+                {home.heroSubtitle}
+              </p>
+            )}
+            {home.heroCtaLabel && home.heroCtaHref && (
+              <div className="mt-8 flex flex-wrap gap-3">
+                <Link
+                  href={home.heroCtaHref}
+                  className="inline-flex h-11 items-center justify-center rounded-md bg-brand-700 px-5 text-sm font-medium text-white transition-colors hover:bg-brand-800"
+                >
+                  {home.heroCtaLabel}
+                </Link>
+                <Link
+                  href="/contact"
+                  className="inline-flex h-11 items-center justify-center rounded-md border border-border px-5 text-sm font-medium text-ink transition-colors hover:bg-surface-muted"
+                >
+                  Contact us
+                </Link>
+              </div>
+            )}
+          </div>
+          <div className="hidden md:block">
+            <div className="aspect-[4/3] rounded-2xl bg-brand-100" />
+          </div>
+        </Container>
+      </section>
+
+      {home.aboutHeading && home.aboutBody && (
+        <section className="py-16">
+          <Container className="max-w-3xl">
+            <h2 className="text-2xl font-semibold tracking-tight text-brand-900 sm:text-3xl">
+              {home.aboutHeading}
+            </h2>
+            <p className="mt-4 whitespace-pre-line text-ink-muted">
+              {home.aboutBody}
+            </p>
+          </Container>
+        </section>
+      )}
+    </>
   );
 }
