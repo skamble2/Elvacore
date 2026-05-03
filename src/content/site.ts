@@ -75,7 +75,12 @@ export const site: SiteConfig = {
     heroImage: "/images/hero.jpg",
     heroCtaLabel: "Explore products",
     heroCtaHref: "/products",
-    featuredProducts: ["example-product"],
+    featuredProducts: [
+      "motion-controller-pro",
+      "servo-drive-x1",
+      "fieldbus-module-fb20",
+      "programmable-controller-pc100",
+    ],
     aboutHeading: "About Elvacore",
     aboutBody: "Short markdown intro shown on the homepage.",
   },
