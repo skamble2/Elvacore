@@ -15,8 +15,8 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="mt-16 border-t border-border bg-brand-900 text-brand-100">
-      <Container className="grid gap-10 py-14 md:grid-cols-4">
+    <footer className="border-t border-border bg-brand-900 text-brand-100">
+      <Container className="grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4">
         <div className="md:col-span-1">
           <p className="text-base font-semibold text-white">Elvacore</p>
           {footer.tagline && (
@@ -76,17 +76,8 @@ export function SiteFooter() {
       </Container>
 
       <div className="border-t border-brand-800">
-        <Container className="flex flex-col items-start justify-between gap-2 py-6 text-xs text-brand-300 sm:flex-row sm:items-center">
+        <Container className="py-6 text-xs text-brand-300">
           <p>© {year} Elvacore Technologies. All rights reserved.</p>
-          <p>
-            <Link href="/privacy" className="hover:text-white">
-              Privacy
-            </Link>
-            <span className="mx-2">·</span>
-            <Link href="/terms" className="hover:text-white">
-              Terms
-            </Link>
-          </p>
         </Container>
       </div>
     </footer>

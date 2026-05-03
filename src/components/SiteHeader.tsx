@@ -29,7 +29,7 @@ export function SiteHeader() {
           aria-label="Toggle navigation"
           aria-expanded={mobileOpen}
           onClick={() => setMobileOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-ink hover:bg-surface-muted lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-md text-ink hover:bg-surface-muted focus-visible:bg-surface-muted lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -165,7 +165,7 @@ function NavItem({
           <path d="M6 9l6 6 6-6" />
         </svg>
       </Link>
-      <div className="invisible absolute left-0 top-full z-10 min-w-[14rem] translate-y-1 rounded-lg border border-border bg-surface p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+      <div className="invisible absolute left-0 top-full z-10 min-w-[14rem] translate-y-1 rounded-lg border border-border bg-surface p-2 opacity-0 shadow-lg transition-all group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100">
         <ul>
           {item.children!.map((child) => (
             <li key={child.label}>

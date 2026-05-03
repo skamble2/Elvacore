@@ -1,9 +1,11 @@
 import Link from "next/link";
-import { news, products, site } from "@/content";
+import { news, products, site, solutions } from "@/content";
 import { Container } from "@/components/Container";
 import { ProductCard } from "@/components/ProductCard";
 import { NewsCard } from "@/components/NewsCard";
 import { SectionHeading } from "@/components/SectionHeading";
+import { SolutionCard } from "@/components/SolutionCard";
+import { CtaBanner } from "@/components/CtaBanner";
 
 export default function Home() {
   const { home } = site;
@@ -19,18 +21,21 @@ export default function Home() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-b from-brand-50 to-surface">
-        <Container className="grid items-center gap-10 py-20 md:grid-cols-2 md:py-28">
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-surface">
+        <Container className="grid items-center gap-10 py-16 sm:py-20 md:grid-cols-2 md:py-28">
           <div>
-            <h1 className="text-4xl font-semibold tracking-tight text-brand-900 sm:text-5xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
+              Intelligent control & automation
+            </p>
+            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
               {home.heroTitle ?? "Elvacore Technologies"}
             </h1>
             {home.heroSubtitle && (
-              <p className="mt-4 max-w-xl text-lg text-ink-muted">
+              <p className="mt-4 max-w-xl text-base text-ink-muted sm:text-lg">
                 {home.heroSubtitle}
               </p>
             )}
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
               {home.heroCtaLabel && home.heroCtaHref && (
                 <Link
                   href={home.heroCtaHref}
@@ -47,15 +52,18 @@ export default function Home() {
               </Link>
             </div>
           </div>
-          <div className="hidden md:block">
-            <div className="aspect-[4/3] rounded-2xl bg-gradient-to-br from-brand-200 via-brand-100 to-accent-400/20" />
+          <div className="relative hidden md:block">
+            <div className="absolute -inset-4 rounded-3xl bg-accent-400/10 blur-2xl" />
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-200 via-brand-100 to-accent-400/20">
+              <div className="absolute inset-0 opacity-50 [background-image:radial-gradient(circle_at_1px_1px,var(--color-brand-300)_1px,transparent_0)] [background-size:24px_24px]" />
+            </div>
           </div>
         </Container>
       </section>
 
       {/* Recommended products */}
       {featured.length > 0 && (
-        <section className="py-20">
+        <section className="py-16 sm:py-20">
           <Container>
             <SectionHeading
               eyebrow="Products"
@@ -73,14 +81,31 @@ export default function Home() {
         </section>
       )}
 
+      {/* Solutions */}
+      {solutions.length > 0 && (
+        <section className="bg-surface-muted py-16 sm:py-20">
+          <Container>
+            <SectionHeading
+              eyebrow="Solutions"
+              title="Solutions across industries"
+              description="Tailored systems combining our products into complete deployments."
+              ctaLabel="View all solutions"
+              ctaHref="/solutions"
+            />
+            <div className="mt-10 grid gap-6 md:grid-cols-3">
+              {solutions.map((solution) => (
+                <SolutionCard key={solution.slug} solution={solution} />
+              ))}
+            </div>
+          </Container>
+        </section>
+      )}
+
       {/* About strip */}
       {home.aboutHeading && home.aboutBody && (
-        <section className="bg-surface-muted py-20">
+        <section className="py-16 sm:py-20">
           <Container className="max-w-3xl">
-            <SectionHeading
-              eyebrow="About"
-              title={home.aboutHeading}
-            />
+            <SectionHeading eyebrow="About" title={home.aboutHeading} />
             <p className="mt-4 whitespace-pre-line text-ink-muted">
               {home.aboutBody}
             </p>
@@ -98,7 +123,7 @@ export default function Home() {
 
       {/* Latest news */}
       {latestNews.length > 0 && (
-        <section className="py-20">
+        <section className="bg-surface-muted py-16 sm:py-20">
           <Container>
             <SectionHeading
               eyebrow="Newsroom"
@@ -115,6 +140,17 @@ export default function Home() {
           </Container>
         </section>
       )}
+
+      {/* CTA banner */}
+      <CtaBanner
+        eyebrow="Get in touch"
+        title="Looking for the right system for your application?"
+        description="Talk to our engineering team — we'll help spec the controllers, drives, and integration that fit your project."
+        primaryLabel="Contact us"
+        primaryHref="/contact"
+        secondaryLabel="Browse products"
+        secondaryHref="/products"
+      />
     </>
   );
 }
