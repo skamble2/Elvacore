@@ -41,3 +41,7 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# local-only AI tooling notes
+AGENTS.md
+CLAUDE.md
+
