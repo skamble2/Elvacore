@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { site } from "@/content";
 import { Container } from "./Container";
 
@@ -12,8 +13,20 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border bg-surface/90 backdrop-blur">
       <Container className="flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <span className="text-lg text-brand-800">Elvacore</span>
+        <Link
+          href="/"
+          aria-label="Elvacore — home"
+          className="flex items-center"
+        >
+          <Image
+            src="/Logo.jpg"
+            alt="Elvacore"
+            width={4121}
+            height={2833}
+            priority
+            sizes="(min-width: 1024px) 160px, 130px"
+            className="h-9 w-auto sm:h-10"
+          />
         </Link>
 
         {/* Desktop nav */}
