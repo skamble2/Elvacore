@@ -47,37 +47,48 @@ export const site: SiteConfig = {
     ],
   },
   footer: {
-    tagline: "Elvacore Technologies",
-    address: "Street, City, State, PIN, India",
-    phone: "+91 00000 00000",
-    email: "info@elvacore.com",
-    socialLinks: [
-      { platform: "linkedin", url: "https://www.linkedin.com/company/elvacore" },
-    ],
+    tagline:
+      "Precision Motion Control & Industrial Automation Solutions. Authorised Indian Distributor of Googol Technology (HK) Limited.",
+    address:
+      "Shop No. 2, Orange County Phase-II, Pashan-Sus Road, Pune - 411021, Maharashtra, India",
+    phone: "+91 99606 64674",
+    email: "elvacoretechnologies@gmail.com",
+    socialLinks: [],
     columns: [
       {
         heading: "Products",
-        links: [{ label: "All Products", href: "/products" }],
+        links: [
+          { label: "All Products", href: "/products" },
+          { label: "Motion Control", href: "/products?category=motion-control" },
+          { label: "PLC", href: "/products?category=plc" },
+          { label: "Servo Drive", href: "/products?category=servo-drive" },
+        ],
       },
       {
-        heading: "Support",
+        heading: "Educational",
         links: [
-          { label: "Downloads", href: "/downloads" },
-          { label: "Technical Support", href: "/technical-support" },
+          { label: "AI Training", href: "/products?category=ai-training" },
+          {
+            label: "Intelligent Control",
+            href: "/products?category=educational-intelligent-control",
+          },
         ],
       },
       {
         heading: "Company",
         links: [
           { label: "About", href: "/about" },
+          { label: "Solutions", href: "/solutions" },
+          { label: "Downloads", href: "/downloads" },
           { label: "Contact", href: "/contact" },
         ],
       },
     ],
   },
   home: {
-    heroTitle: "Elvacore Technologies",
-    heroSubtitle: "Tagline / one-sentence positioning statement.",
+    heroTitle: "Precision Motion Control & Industrial Automation",
+    heroSubtitle:
+      "Authorised Indian distributor of Googol Technology (HK) Limited — bringing 25+ years of motion-control expertise to industrial machine builders and engineering institutions across India.",
     heroImage: "/images/hero.jpg",
     heroCtaLabel: "Explore products",
     heroCtaHref: "/products",
@@ -87,7 +98,8 @@ export const site: SiteConfig = {
       "gshd-servo-drive",
       "ai-training-box",
     ],
-    aboutHeading: "About Elvacore",
-    aboutBody: "Short markdown intro shown on the homepage.",
+    aboutHeading: "Your partner for precision motion control",
+    aboutBody:
+      "Elvacore Technologies LLP is the authorised Indian distributor of Googol Technology (HK) Limited — Asia Pacific's first motion control specialist, founded in 1999 by HKUST scholars. Our focused 8-product portfolio spans motion control, servo drives, PLCs, AI training and intelligent control platforms, serving industrial machine builders and academic / R&D institutions across India.",
   },
 };

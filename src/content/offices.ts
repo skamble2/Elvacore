@@ -1,15 +1,16 @@
 import type { Office } from "./types";
 
 export const offices: Office[] = [
-  // TODO: fill in real offices and distributors.
   {
-    name: "Elvacore HQ",
+    name: "Elvacore Technologies LLP — HQ",
     type: "office",
     country: "India",
     region: "Asia",
-    address: "Street, City, State, PIN",
-    phone: "+91 00000 00000",
-    email: "info@elvacore.com",
-    mapUrl: "https://maps.google.com/?q=...",
+    address:
+      "Shop No. 2, Orange County Phase-II, Pashan-Sus Road, Pune - 411021, Maharashtra",
+    phone: "+91 99606 64674",
+    email: "elvacoretechnologies@gmail.com",
+    mapUrl:
+      "https://maps.google.com/?q=Orange+County+Phase-II+Pashan-Sus+Road+Pune+411021",
   },
 ];

@@ -5,8 +5,8 @@ export const downloads: Download[] = [
   {
     title: "Sample certificate (R2 connectivity test)",
     category: "brochure",
-    file: r2("Generative_AI_with_LLMs_certificate.png"),
+    file: r2("Elvacore_Product_Brochure_v1.pdf"),
     product: "gts-pcie",
-    description: "Temporary entry to verify R2 public-bucket downloads work end-to-end.",
+    description: "Full product catalog covering all 8 products across 5 categories.",
   },
 ];
