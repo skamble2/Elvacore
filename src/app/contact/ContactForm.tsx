@@ -1,8 +1,6 @@
 "use client";
 
-import { useActionState, useId } from "react";
-import { useFormStatus } from "react-dom";
-import { sendContactMessage, type ContactFormState } from "./actions";
+import { useId, useState } from "react";
 
 const TOPICS = [
   "General enquiry",
@@ -13,11 +11,16 @@ const TOPICS = [
   "Other",
 ];
 
-const initialState: ContactFormState = { status: "idle" };
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+type FormState =
+  | { status: "idle" }
+  | { status: "submitting" }
+  | { status: "success" }
+  | { status: "error"; message: string; fieldErrors?: Record<string, string> };
 
 export function ContactForm() {
-  const [state, formAction] = useActionState(sendContactMessage, initialState);
-  const errors = state.status === "error" ? state.fieldErrors ?? {} : {};
+  const [state, setState] = useState<FormState>({ status: "idle" });
   const ids = {
     name: useId(),
     email: useId(),
@@ -26,6 +29,103 @@ export function ContactForm() {
     topic: useId(),
     message: useId(),
   };
+  const errors = state.status === "error" ? state.fieldErrors ?? {} : {};
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    // Honeypot — bots fill hidden fields, real users don't.
+    if ((formData.get("company_website") as string)?.length) {
+      setState({ status: "success" });
+      return;
+    }
+
+    const name = String(formData.get("name") || "").trim();
+    const email = String(formData.get("email") || "").trim();
+    const message = String(formData.get("message") || "").trim();
+    const topic = String(formData.get("topic") || "General enquiry").trim();
+
+    const fieldErrors: Record<string, string> = {};
+    if (!name) fieldErrors.name = "Please enter your name.";
+    if (!email) fieldErrors.email = "Please enter your email.";
+    else if (!EMAIL_RE.test(email))
+      fieldErrors.email = "Please enter a valid email.";
+    if (!message) fieldErrors.message = "Please enter a message.";
+    else if (message.length < 10)
+      fieldErrors.message = "Please write at least 10 characters.";
+
+    if (Object.keys(fieldErrors).length > 0) {
+      setState({
+        status: "error",
+        message: "Please fix the highlighted fields.",
+        fieldErrors,
+      });
+      return;
+    }
+
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
+    if (!accessKey) {
+      setState({
+        status: "error",
+        message:
+          "Contact form is temporarily unavailable. Please email us directly at elvacoretechnologies@gmail.com.",
+      });
+      return;
+    }
+
+    setState({ status: "submitting" });
+
+    // Build a clean payload (avoid sending the honeypot to Web3Forms)
+    const payload = new FormData();
+    payload.append("access_key", accessKey);
+    payload.append("subject", `[Elvacore site] ${topic}`);
+    payload.append("from_name", "Elvacore website");
+    payload.append("replyto", email);
+    payload.append("Name", name);
+    payload.append("Email", email);
+    payload.append(
+      "Phone",
+      String(formData.get("phone") || "").trim() || "—",
+    );
+    payload.append(
+      "Organization",
+      String(formData.get("organization") || "").trim() || "—",
+    );
+    payload.append("Topic", topic);
+    payload.append("Message", message);
+
+    try {
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: payload,
+      });
+      const data = (await res.json().catch(() => ({}))) as {
+        success?: boolean;
+        message?: string;
+      };
+
+      if (data.success) {
+        setState({ status: "success" });
+        form.reset();
+      } else {
+        setState({
+          status: "error",
+          message:
+            data.message ||
+            "Something went wrong sending your message. Please try again or email us directly.",
+        });
+      }
+    } catch (err) {
+      console.error("contact form submit failed", err);
+      setState({
+        status: "error",
+        message:
+          "We couldn't reach our mail service. Please try again in a few minutes.",
+      });
+    }
+  }
 
   if (state.status === "success") {
     return (
@@ -35,15 +135,28 @@ export function ContactForm() {
         </h3>
         <p className="mt-2 text-ink-muted">
           We'll get back to you at the email you provided. For urgent matters,
-          call <a className="text-brand-700 underline" href="tel:+919960664674">+91 99606 64674</a>.
+          call{" "}
+          <a className="text-brand-700 underline" href="tel:+919960664674">
+            +91 99606 64674
+          </a>
+          .
         </p>
+        <button
+          type="button"
+          onClick={() => setState({ status: "idle" })}
+          className="mt-4 inline-flex h-9 items-center justify-center rounded-md border border-border px-4 text-sm font-medium text-ink hover:bg-surface-muted"
+        >
+          Send another message
+        </button>
       </div>
     );
   }
 
+  const submitting = state.status === "submitting";
+
   return (
     <form
-      action={formAction}
+      onSubmit={handleSubmit}
       className="flex flex-col gap-5 rounded-xl border border-border bg-surface p-6 sm:p-8"
       noValidate
     >
@@ -129,7 +242,13 @@ export function ContactForm() {
         )}
       </div>
 
-      <SubmitButton />
+      <button
+        type="submit"
+        disabled={submitting}
+        className="inline-flex h-11 items-center justify-center rounded-md bg-brand-700 px-5 text-sm font-medium text-white transition-colors hover:bg-brand-800 disabled:opacity-60"
+      >
+        {submitting ? "Sending…" : "Send message"}
+      </button>
     </form>
   );
 }
@@ -166,18 +285,5 @@ function Field({
       />
       {error && <p className="text-xs text-accent-700">{error}</p>}
     </div>
-  );
-}
-
-function SubmitButton() {
-  const { pending } = useFormStatus();
-  return (
-    <button
-      type="submit"
-      disabled={pending}
-      className="inline-flex h-11 items-center justify-center rounded-md bg-brand-700 px-5 text-sm font-medium text-white transition-colors hover:bg-brand-800 disabled:opacity-60"
-    >
-      {pending ? "Sending…" : "Send message"}
-    </button>
   );
 }
