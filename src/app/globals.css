@@ -1,35 +1,43 @@
 @import "tailwindcss";
 
 /* -----------------------------------------------------------
-   Design tokens — change these to rebrand the site.
-   Tailwind v4 auto-generates utility classes from @theme,
-   so e.g. --color-brand-600 becomes `bg-brand-600`, `text-brand-600`.
+   Design tokens — sampled from the Elvacore Company Profile v2
+   PDF. Primary palette is white + deep indigo-purple, with a
+   small red accent for eyebrows / badges / focus rings.
+   Tailwind v4 auto-generates utilities from @theme:
+   --color-brand-700 → bg-brand-700, text-brand-700, etc.
    ----------------------------------------------------------- */
 @theme {
-  /* Brand — deep navy (industrial / trust) */
-  --color-brand-50: #eef3f9;
-  --color-brand-100: #d3deec;
-  --color-brand-200: #a7bdda;
-  --color-brand-300: #7b9cc7;
-  --color-brand-400: #4f7ab5;
-  --color-brand-500: #2a5894;
-  --color-brand-600: #1a3f6e;
-  --color-brand-700: #143055;
-  --color-brand-800: #0e223c;
-  --color-brand-900: #081424;
+  /* Brand — Deep Indigo (PDF source: brand-800 = #3D1878) */
+  --color-brand-50: #f4f0fb;
+  --color-brand-100: #e5dcf4;
+  --color-brand-200: #c8b5e8;
+  --color-brand-300: #a98dda;
+  --color-brand-400: #8b66cc;
+  --color-brand-500: #6b43ba;
+  --color-brand-600: #5530a0;
+  --color-brand-700: #432385;
+  --color-brand-800: #3d1878;
+  --color-brand-900: #2a0f58;
 
-  /* Accent — teal (CTAs, links, highlights) */
-  --color-accent-400: #2dd4bf;
-  --color-accent-500: #14b8a6;
-  --color-accent-600: #0d9488;
-  --color-accent-700: #0f766e;
+  /* Accent — Crimson Red (PDF source: accent-500 = #D72638)
+     Used SPARINGLY: eyebrows, focus rings, the thin top strip,
+     "Featured" badges. Never on large surfaces. */
+  --color-accent-50: #fce7e9;
+  --color-accent-100: #f8c8cd;
+  --color-accent-200: #f09199;
+  --color-accent-300: #e85b66;
+  --color-accent-400: #e04553;
+  --color-accent-500: #d72638;
+  --color-accent-600: #b71d2d;
+  --color-accent-700: #921824;
 
-  /* Surfaces */
+  /* Neutrals */
   --color-surface: #ffffff;
-  --color-surface-muted: #f7f8fa;
-  --color-ink: #0e1116;
-  --color-ink-muted: #4b5563;
-  --color-border: #e5e7eb;
+  --color-surface-muted: #f7f5fb;
+  --color-ink: #3c3c4e;
+  --color-ink-muted: #6e6e80;
+  --color-border: #e5e2ee;
 
   /* Typography */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
