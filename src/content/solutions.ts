@@ -9,7 +9,7 @@ export const solutions: Solution[] = [
     summary:
       "Connected infrastructure for urban environments — sensing, water, waste, and indoor farming.",
     body: "Solution detail body placeholder.",
-    relatedProducts: ["motion-controller-pro"],
+    relatedProducts: ["ideabox-pro"],
   },
   {
     slug: "smart-industry",
@@ -18,7 +18,7 @@ export const solutions: Solution[] = [
     summary:
       "Motion control, robotics, and automation systems for high-throughput manufacturing.",
     body: "Solution detail body placeholder.",
-    relatedProducts: ["motion-controller-pro", "servo-drive-x1"],
+    relatedProducts: ["gts-pcie", "gshd-servo-drive"],
   },
   {
     slug: "education-training",
@@ -27,6 +27,6 @@ export const solutions: Solution[] = [
     summary:
       "Hands-on engineering training kits and curricula for universities and industry partners.",
     body: "Solution detail body placeholder.",
-    relatedProducts: ["training-kit-edu1"],
+    relatedProducts: ["ai-training-box", "glip-control-platform"],
   },
 ];

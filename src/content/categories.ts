@@ -1,11 +1,20 @@
 import type { Category } from "./types";
 
+// Two top-level groups (Industrial / Educational), each with leaf categories.
 export const categories: Category[] = [
-  // TODO: replace with real categories. Structure mirrors the Googoltech tree.
-  { slug: "intelligent-control", title: "Intelligent Control", order: 1 },
+  // Industrial
+  { slug: "industrial", title: "Industrial Products", order: 1 },
+  { slug: "motion-control", title: "Motion Control", parent: "industrial", order: 1 },
+  { slug: "plc", title: "PLC", parent: "industrial", order: 2 },
+  { slug: "servo-drive", title: "Servo Drive", parent: "industrial", order: 3 },
+
+  // Educational
+  { slug: "educational", title: "Educational Products", order: 2 },
+  { slug: "ai-training", title: "AI Training", parent: "educational", order: 1 },
   {
-    slug: "motion-control",
-    title: "Motion Control",
-    parent: "intelligent-control",
+    slug: "educational-intelligent-control",
+    title: "Intelligent Control",
+    parent: "educational",
+    order: 2,
   },
 ];

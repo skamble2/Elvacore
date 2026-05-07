@@ -16,8 +16,14 @@ export const site: SiteConfig = {
         label: "Products",
         href: "/products",
         children: [
-          { label: "Intelligent Control", href: "/products?category=intelligent-control" },
           { label: "Motion Control", href: "/products?category=motion-control" },
+          { label: "PLC", href: "/products?category=plc" },
+          { label: "Servo Drive", href: "/products?category=servo-drive" },
+          { label: "AI Training", href: "/products?category=ai-training" },
+          {
+            label: "Intelligent Control",
+            href: "/products?category=educational-intelligent-control",
+          },
         ],
       },
       {
@@ -76,10 +82,10 @@ export const site: SiteConfig = {
     heroCtaLabel: "Explore products",
     heroCtaHref: "/products",
     featuredProducts: [
-      "motion-controller-pro",
-      "servo-drive-x1",
-      "fieldbus-module-fb20",
-      "programmable-controller-pc100",
+      "gts-pcie",
+      "ideabox-pro",
+      "gshd-servo-drive",
+      "ai-training-box",
     ],
     aboutHeading: "About Elvacore",
     aboutBody: "Short markdown intro shown on the homepage.",

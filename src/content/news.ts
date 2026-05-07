@@ -12,8 +12,8 @@ export const news: NewsArticle[] = [
     body: "Article body placeholder.",
   },
   {
-    slug: "motion-controller-pro-released",
-    title: "Motion Controller Pro now generally available",
+    slug: "gts-pcie-released",
+    title: "GTS-PCIe Series now generally available",
     date: "2026-04-18",
     excerpt:
       "Our flagship multi-axis controller is shipping to customers worldwide.",
