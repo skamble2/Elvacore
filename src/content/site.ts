@@ -100,6 +100,6 @@ export const site: SiteConfig = {
     ],
     aboutHeading: "Your partner for precision motion control",
     aboutBody:
-      "Elvacore Technologies LLP is the authorised Indian distributor of Googol Technology (HK) Limited — Asia Pacific's first motion control specialist, founded in 1999 by HKUST scholars. Our focused 8-product portfolio spans motion control, servo drives, PLCs, AI training and intelligent control platforms, serving industrial machine builders and academic / R&D institutions across India.",
+      "Elvacore Technologies LLP is a Pune-based technology company specialising in the supply, distribution, and application support of advanced motion control and industrial automation products. We serve machine builders, system integrators, academic institutions, and R&D laboratories across India — covering motion control, servo drives, PLCs, AI training, and intelligent control platforms.",
   },
 };
