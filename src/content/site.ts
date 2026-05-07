@@ -42,7 +42,6 @@ export const site: SiteConfig = {
           { label: "Technical Support", href: "/technical-support" },
         ],
       },
-      { label: "News", href: "/news" },
       { label: "Contact Us", href: "/contact" },
     ],
   },

@@ -36,15 +36,6 @@ export type Solution = {
   relatedProducts?: string[];
 };
 
-export type NewsArticle = {
-  slug: string;
-  title: string;
-  date: string;
-  excerpt?: string;
-  featuredImage?: string;
-  body?: string;
-};
-
 export type Download = {
   title: string;
   category: "brochure" | "manual" | "datasheet" | "software";

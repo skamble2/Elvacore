@@ -1,8 +1,7 @@
 import Link from "next/link";
-import { news, products, site, solutions } from "@/content";
+import { products, site, solutions } from "@/content";
 import { Container } from "@/components/Container";
 import { ProductCard } from "@/components/ProductCard";
-import { NewsCard } from "@/components/NewsCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SolutionCard } from "@/components/SolutionCard";
 import { CtaBanner } from "@/components/CtaBanner";
@@ -13,10 +12,6 @@ export default function Home() {
   const featured = home.featuredProducts
     .map((slug) => products.find((p) => p.slug === slug))
     .filter((p): p is NonNullable<typeof p> => Boolean(p));
-
-  const latestNews = [...news]
-    .sort((a, b) => (a.date < b.date ? 1 : -1))
-    .slice(0, 4);
 
   return (
     <>
@@ -116,26 +111,6 @@ export default function Home() {
               >
                 Read more <span aria-hidden>→</span>
               </Link>
-            </div>
-          </Container>
-        </section>
-      )}
-
-      {/* Latest news */}
-      {latestNews.length > 0 && (
-        <section className="bg-surface-muted py-16 sm:py-20">
-          <Container>
-            <SectionHeading
-              eyebrow="Newsroom"
-              title="Latest News"
-              description="Announcements, releases, and what we've been working on."
-              ctaLabel="View all news"
-              ctaHref="/news"
-            />
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {latestNews.map((article) => (
-                <NewsCard key={article.slug} article={article} />
-              ))}
             </div>
           </Container>
         </section>
