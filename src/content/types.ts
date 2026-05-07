@@ -10,9 +10,17 @@ export type Product = {
   title: string;
   category: string;
   summary?: string;
+  /** Short 1-2 sentence original description shown above bullet sections. */
   description?: string;
+  /** Bullet-point list of capabilities / technical highlights. */
+  features?: string[];
+  /** Bullet-point list of typical industries or applications. */
+  applications?: string[];
+  /** Optional structured spec rows (label / value). */
   specifications?: { label: string; value: string }[];
+  /** Image paths under /public, e.g. ["/images/products/<slug>/01.jpg"]. */
   images: string[];
+  /** Optional R2 datasheet URL (use the r2() helper). */
   datasheet?: string;
   featured?: boolean;
   order?: number;

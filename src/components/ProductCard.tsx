@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { categories } from "@/content";
 import type { Product } from "@/content/types";
@@ -7,12 +8,24 @@ function categoryTitle(slug: string) {
 }
 
 export function ProductCard({ product }: { product: Product }) {
+  const cover = product.images[0];
+
   return (
     <Link
       href={`/products/${product.slug}`}
       className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-shadow hover:shadow-md"
     >
-      <div className="aspect-[4/3] w-full bg-gradient-to-br from-brand-100 via-brand-50 to-accent-400/20" />
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-brand-100 via-brand-50 to-accent-400/20">
+        {cover && (
+          <Image
+            src={cover}
+            alt={product.title}
+            fill
+            sizes="(min-width: 1280px) 320px, (min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            className="object-contain p-4"
+          />
+        )}
+      </div>
       <div className="flex flex-1 flex-col gap-1.5 p-5">
         <p className="text-xs font-medium uppercase tracking-wide text-accent-600">
           {categoryTitle(product.category)}
