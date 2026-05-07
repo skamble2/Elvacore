@@ -17,9 +17,4 @@ export const pages: StaticPage[] = [
     title: "Corporate Vision",
     body: "Markdown body for the Corporate Vision page.",
   },
-  {
-    slug: "technical-support",
-    title: "Technical Support",
-    body: "Markdown body for the Technical Support page.",
-  },
 ];

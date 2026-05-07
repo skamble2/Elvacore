@@ -35,13 +35,6 @@ export const site: SiteConfig = {
           { label: "Education & Training", href: "/solutions?type=education-training" },
         ],
       },
-      {
-        label: "Support",
-        children: [
-          { label: "Downloads", href: "/downloads" },
-          { label: "Technical Support", href: "/technical-support" },
-        ],
-      },
       { label: "Contact Us", href: "/contact" },
     ],
   },
