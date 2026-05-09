@@ -1,5 +1,7 @@
 import { Container } from "@/components/Container";
 import { CtaBanner } from "@/components/CtaBanner";
+import { AnimatedCounter } from "@/components/AnimatedCounter";
+import { ResponsiveCarousel } from "@/components/ResponsiveCarousel";
 
 export const metadata = {
   title: "Company Profile",
@@ -7,11 +9,11 @@ export const metadata = {
     "Elvacore Technologies LLP — Pune-based supplier of motion control and industrial automation products.",
 };
 
-const stats = [
-  { value: "9", label: "Total Products" },
-  { value: "5", label: "Product Categories" },
+const stats: { value: number | string; label: string }[] = [
+  { value: 9, label: "Total Products" },
+  { value: 5, label: "Product Categories" },
   { value: "2024", label: "Year Established" },
-  { value: "3", label: "Designated Partners" },
+  { value: 3, label: "Designated Partners" },
 ];
 
 const glance: { label: string; value: string }[] = [
@@ -41,9 +43,17 @@ const glance: { label: string; value: string }[] = [
   },
 ];
 
-const industryGroups: { heading: string; items: { name: string; description: string }[] }[] = [
+type IndustryItem = { name: string; description: string };
+type IndustryGroup = {
+  heading: string;
+  caption: string;
+  items: IndustryItem[];
+};
+
+const industryGroups: IndustryGroup[] = [
   {
     heading: "Core industrial sectors",
+    caption: "Where precision motion meets heavy-duty manufacturing.",
     items: [
       {
         name: "Microelectronics & Semiconductors",
@@ -69,6 +79,7 @@ const industryGroups: { heading: string; items: { name: string; description: str
   },
   {
     heading: "Electronics & processing",
+    caption: "High-throughput lines that demand consistent, repeatable motion.",
     items: [
       {
         name: "Electronic Processing & Testing",
@@ -89,6 +100,7 @@ const industryGroups: { heading: string; items: { name: string; description: str
   },
   {
     heading: "Smart & emerging technology",
+    caption: "Industry 4.0, machine vision, and AI-led automation.",
     items: [
       {
         name: "Smart Industry / Industry 4.0",
@@ -137,6 +149,16 @@ const services: { title: string; description: string }[] = [
   },
 ];
 
+function IndustryCard({ item }: { item: IndustryItem }) {
+  return (
+    <div className="flex h-full flex-col gap-3 rounded-xl border border-border bg-surface p-5 sm:p-6">
+      <div className="h-1 w-10 rounded-full bg-accent-500" aria-hidden />
+      <h4 className="text-base font-semibold text-ink">{item.name}</h4>
+      <p className="text-sm text-ink-muted">{item.description}</p>
+    </div>
+  );
+}
+
 export default function AboutPage() {
   return (
     <>
@@ -167,16 +189,26 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Stats */}
-      <section className="border-b border-border bg-surface py-10 sm:py-12">
+      {/* Stats — animated counters with gradient text */}
+      <section className="border-b border-border bg-surface py-12 sm:py-16">
         <Container>
-          <dl className="grid grid-cols-2 gap-6 md:grid-cols-4">
+          <dl className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
             {stats.map((s) => (
               <div key={s.label} className="text-center">
-                <dt className="text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl">
-                  {s.value}
+                <dt className="bg-gradient-to-br from-brand-700 to-brand-900 bg-clip-text text-5xl font-semibold tracking-tight text-transparent sm:text-6xl">
+                  {typeof s.value === "number" ? (
+                    <AnimatedCounter value={s.value} />
+                  ) : (
+                    s.value
+                  )}
                 </dt>
-                <dd className="mt-1 text-sm text-ink-muted">{s.label}</dd>
+                <div
+                  aria-hidden
+                  className="mx-auto mt-3 h-0.5 w-10 rounded-full bg-accent-500"
+                />
+                <dd className="mt-3 text-sm font-medium text-ink-muted sm:text-base">
+                  {s.label}
+                </dd>
               </div>
             ))}
           </dl>
@@ -224,7 +256,7 @@ export default function AboutPage() {
             {services.map((s, i) => (
               <div
                 key={s.title}
-                className="flex flex-col gap-3 rounded-xl border border-border bg-surface p-6"
+                className="flex h-full flex-col gap-3 rounded-xl border border-border bg-surface p-6"
               >
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-700 text-sm font-semibold text-white">
                   {String(i + 1).padStart(2, "0")}
@@ -237,7 +269,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Industries served */}
+      {/* Industries served — grouped sections, each a carousel on mobile / grid on sm+ */}
       <section className="py-16 sm:py-20">
         <Container>
           <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
@@ -250,22 +282,24 @@ export default function AboutPage() {
             From precision semiconductor fabrication and CNC machining to smart
             city applications and AI-driven Industry 4.0 solutions.
           </p>
-          <div className="mt-10 grid gap-10 md:grid-cols-3">
+
+          <div className="mt-12 flex flex-col gap-12 sm:gap-14">
             {industryGroups.map((group) => (
               <div key={group.heading}>
-                <h3 className="text-sm font-semibold uppercase tracking-wider text-brand-800">
-                  {group.heading}
-                </h3>
-                <ul className="mt-4 flex flex-col gap-4">
-                  {group.items.map((item) => (
-                    <li key={item.name}>
-                      <p className="font-medium text-ink">{item.name}</p>
-                      <p className="mt-0.5 text-sm text-ink-muted">
-                        {item.description}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
+                <div className="flex flex-col gap-1 border-l-2 border-accent-500 pl-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
+                  <h3 className="text-lg font-semibold tracking-tight text-brand-900 sm:text-xl">
+                    {group.heading}
+                  </h3>
+                  <p className="text-sm text-ink-muted">{group.caption}</p>
+                </div>
+                <ResponsiveCarousel
+                  items={group.items}
+                  cols="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                  className="mt-6"
+                  itemKey={(item) => item.name}
+                >
+                  {(item) => <IndustryCard item={item} />}
+                </ResponsiveCarousel>
               </div>
             ))}
           </div>
