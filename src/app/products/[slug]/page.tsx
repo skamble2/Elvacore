@@ -5,6 +5,7 @@ import { categories, downloads, products } from "@/content";
 import { Container } from "@/components/Container";
 import { ProductCard } from "@/components/ProductCard";
 import { CtaBanner } from "@/components/CtaBanner";
+import { ResponsiveCarousel } from "@/components/ResponsiveCarousel";
 
 type Params = { slug: string };
 type Props = { params: Promise<Params> };
@@ -256,11 +257,13 @@ export default async function ProductDetailPage({ params }: Props) {
             <h2 className="text-xl font-semibold tracking-tight text-brand-900 sm:text-2xl">
               Related products
             </h2>
-            <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {related.map((p) => (
-                <ProductCard key={p.slug} product={p} />
-              ))}
-            </div>
+            <ResponsiveCarousel
+              items={related}
+              cols="sm:grid-cols-2 lg:grid-cols-4"
+              className="mt-8"
+            >
+              {(p) => <ProductCard product={p} />}
+            </ResponsiveCarousel>
           </Container>
         </section>
       )}

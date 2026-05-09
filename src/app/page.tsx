@@ -5,6 +5,7 @@ import { ProductCard } from "@/components/ProductCard";
 import { SectionHeading } from "@/components/SectionHeading";
 import { SolutionCard } from "@/components/SolutionCard";
 import { CtaBanner } from "@/components/CtaBanner";
+import { ResponsiveCarousel } from "@/components/ResponsiveCarousel";
 
 export default function Home() {
   const { home } = site;
@@ -67,11 +68,13 @@ export default function Home() {
               ctaLabel="View all products"
               ctaHref="/products"
             />
-            <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {featured.map((product) => (
-                <ProductCard key={product.slug} product={product} />
-              ))}
-            </div>
+            <ResponsiveCarousel
+              items={featured}
+              cols="sm:grid-cols-2 lg:grid-cols-4"
+              className="mt-10"
+            >
+              {(product) => <ProductCard product={product} />}
+            </ResponsiveCarousel>
           </Container>
         </section>
       )}
@@ -87,11 +90,13 @@ export default function Home() {
               ctaLabel="View all solutions"
               ctaHref="/solutions"
             />
-            <div className="mt-10 grid gap-6 md:grid-cols-3">
-              {solutions.map((solution) => (
-                <SolutionCard key={solution.slug} solution={solution} />
-              ))}
-            </div>
+            <ResponsiveCarousel
+              items={solutions}
+              cols="md:grid-cols-3"
+              className="mt-10"
+            >
+              {(solution) => <SolutionCard solution={solution} />}
+            </ResponsiveCarousel>
           </Container>
         </section>
       )}

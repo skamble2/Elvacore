@@ -3,6 +3,7 @@ import { categories, products } from "@/content";
 import { Container } from "@/components/Container";
 import { ProductCard } from "@/components/ProductCard";
 import { CtaBanner } from "@/components/CtaBanner";
+import { ResponsiveCarousel } from "@/components/ResponsiveCarousel";
 
 export const metadata = { title: "Products" };
 
@@ -74,11 +75,13 @@ export default async function ProductsPage({ searchParams }: Props) {
           {/* Grid (filtered) or grouped sections */}
           {activeCategory ? (
             filtered.length > 0 ? (
-              <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                {filtered.map((p) => (
-                  <ProductCard key={p.slug} product={p} />
-                ))}
-              </div>
+              <ResponsiveCarousel
+                items={filtered}
+                cols="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                className="mt-10"
+              >
+                {(p) => <ProductCard product={p} />}
+              </ResponsiveCarousel>
             ) : (
               <p className="mt-10 text-ink-muted">
                 No products in this category yet.
@@ -99,11 +102,13 @@ export default async function ProductsPage({ searchParams }: Props) {
                       View all <span aria-hidden>→</span>
                     </Link>
                   </div>
-                  <div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-                    {g.items.map((p) => (
-                      <ProductCard key={p.slug} product={p} />
-                    ))}
-                  </div>
+                  <ResponsiveCarousel
+                    items={g.items}
+                    cols="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+                    className="mt-6"
+                  >
+                    {(p) => <ProductCard product={p} />}
+                  </ResponsiveCarousel>
                 </div>
               ))}
             </div>
