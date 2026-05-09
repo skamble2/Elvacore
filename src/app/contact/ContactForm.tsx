@@ -48,18 +48,29 @@ export function ContactForm() {
     const topic = String(formData.get("topic") || "General enquiry").trim();
 
     const fieldErrors: Record<string, string> = {};
-    if (!name) fieldErrors.name = "Please enter your name.";
-    if (!email) fieldErrors.email = "Please enter your email.";
-    else if (!EMAIL_RE.test(email))
-      fieldErrors.email = "Please enter a valid email.";
-    if (!message) fieldErrors.message = "Please enter a message.";
-    else if (message.length < 10)
-      fieldErrors.message = "Please write at least 10 characters.";
+    if (!name) {
+      fieldErrors.name = "We'll need your name so we can address you properly.";
+    }
+    if (!email) {
+      fieldErrors.email =
+        "We'll need an email to send our reply to.";
+    } else if (!EMAIL_RE.test(email)) {
+      fieldErrors.email =
+        "That doesn't look like a valid email — please check the format (e.g. you@example.com).";
+    }
+    if (!message) {
+      fieldErrors.message =
+        "Tell us a little about what you're looking for — even a sentence helps.";
+    } else if (message.length < 10) {
+      fieldErrors.message =
+        "Could you share a bit more detail? A few sentences help us route your enquiry to the right person.";
+    }
 
     if (Object.keys(fieldErrors).length > 0) {
       setState({
         status: "error",
-        message: "Please fix the highlighted fields.",
+        message:
+          "A few details still need your attention — please review the highlighted fields above.",
         fieldErrors,
       });
       return;
@@ -70,7 +81,7 @@ export function ContactForm() {
       setState({
         status: "error",
         message:
-          "Contact form is temporarily unavailable. Please email us directly at elvacoretechnologies@gmail.com.",
+          "Our message form is temporarily unavailable. In the meantime, please email us at elvacoretechnologies@gmail.com or call +91 99606 64674 — we'll get back to you straight away.",
       });
       return;
     }
@@ -113,8 +124,7 @@ export function ContactForm() {
         setState({
           status: "error",
           message:
-            data.message ||
-            "Something went wrong sending your message. Please try again or email us directly.",
+            "We couldn't deliver your message just now — sorry about that. Please try again in a moment, or email us at elvacoretechnologies@gmail.com / call +91 99606 64674 and we'll pick it up from there.",
         });
       }
     } catch (err) {
@@ -122,7 +132,7 @@ export function ContactForm() {
       setState({
         status: "error",
         message:
-          "We couldn't reach our mail service. Please try again in a few minutes.",
+          "Looks like there's a connection issue on our end. Please check your internet and try once more — or reach us directly at elvacoretechnologies@gmail.com / +91 99606 64674.",
       });
     }
   }
@@ -130,12 +140,27 @@ export function ContactForm() {
   if (state.status === "success") {
     return (
       <div className="rounded-xl border border-border bg-surface p-6 sm:p-8">
-        <h3 className="text-lg font-semibold text-brand-900">
-          Thanks — your message is on its way.
+        <div className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-50 text-brand-700">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="h-5 w-5"
+            aria-hidden
+          >
+            <path d="M20 6L9 17l-5-5" />
+          </svg>
+        </div>
+        <h3 className="mt-4 text-lg font-semibold text-brand-900">
+          Thanks for reaching out — your message is on its way.
         </h3>
         <p className="mt-2 text-ink-muted">
-          We'll get back to you at the email you provided. For urgent matters,
-          call{" "}
+          A member of our team will reply to the email you provided, usually
+          within 1–2 working days. For anything urgent, you can also call us on{" "}
           <a className="text-brand-700 underline" href="tel:+919960664674">
             +91 99606 64674
           </a>
@@ -144,7 +169,7 @@ export function ContactForm() {
         <button
           type="button"
           onClick={() => setState({ status: "idle" })}
-          className="mt-4 inline-flex h-9 items-center justify-center rounded-md border border-border px-4 text-sm font-medium text-ink hover:bg-surface-muted"
+          className="mt-5 inline-flex h-9 items-center justify-center rounded-md border border-border px-4 text-sm font-medium text-ink hover:bg-surface-muted"
         >
           Send another message
         </button>
