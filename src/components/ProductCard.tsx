@@ -13,7 +13,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group flex flex-col overflow-hidden rounded-xl border border-border bg-surface transition-shadow hover:shadow-md"
+      className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface transition-shadow hover:shadow-md"
     >
       <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-brand-100 via-brand-50 to-accent-400/20">
         {cover && (

@@ -11,7 +11,7 @@ export function SolutionCard({ solution }: { solution: Solution }) {
   return (
     <Link
       href={`/solutions/${solution.slug}`}
-      className="group flex flex-col gap-3 rounded-xl border border-border bg-surface p-6 transition-shadow hover:shadow-md"
+      className="group flex h-full flex-col gap-3 rounded-xl border border-border bg-surface p-6 transition-shadow hover:shadow-md"
     >
       <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
         {typeLabels[solution.type]}

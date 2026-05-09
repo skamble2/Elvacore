@@ -48,7 +48,7 @@ export function ResponsiveCarousel<T>({
               ? itemKey(item, i)
               : (item as { slug?: string }).slug ?? String(i)
           }
-          className={`shrink-0 snap-start sm:shrink ${mobileWidth}`}
+          className={`flex shrink-0 snap-start sm:shrink ${mobileWidth}`}
         >
           {children(item, i)}
         </div>
