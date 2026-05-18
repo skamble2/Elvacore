@@ -9,14 +9,14 @@ export const metadata = {
 
 const advantages = [
   {
-    title: "Authorised Distributor",
+    title: "Authorised Indian Distributor",
     description:
-      "Direct supply chain from Googol Technology (HK) Ltd. ensures genuine products, valid warranties, factory-level technical documentation, and competitive pricing.",
+      "Direct authorised supply chain ensures genuine products, valid warranties, factory-level technical documentation, and competitive import pricing.",
   },
   {
     title: "End-to-End Solution Provider",
     description:
-      "From motion control cards and servo drives to AI training rigs, we cover the complete automation spectrum with supply, installation, integration, training, and AMC.",
+      "From motion control cards and servo drives to AI training rigs, we cover the complete automation spectrum — supply, installation, integration, training, and AMC.",
   },
   {
     title: "MSME Registered",
@@ -26,7 +26,7 @@ const advantages = [
   {
     title: "Deep Technical Expertise",
     description:
-      "Hands-on R&D and industrial automation experience to support system design, servo commissioning, PLC programming, and field troubleshooting.",
+      "Hands-on R&D and industrial automation experience to support system design, servo commissioning, PLC programming, and field troubleshooting — backed by over two decades of domain knowledge.",
   },
   {
     title: "Academic & Industrial Focus",
@@ -36,7 +36,7 @@ const advantages = [
   {
     title: "Proven Global Partnership",
     description:
-      "Backed by Googol Technology, with multi-award-winning products deployed across 30+ countries and HKUST research pedigree.",
+      "Backed by internationally award-winning motion-control technology — products deployed across 30+ countries with a heritage of academic and industrial innovation since the late 1990s.",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function VisionPage() {
             Why choose Elvacore
           </h1>
           <p className="mt-4 max-w-3xl text-base text-ink-muted sm:text-lg">
-            Six clear advantages make Elvacore Technologies the preferred
+            Six clear advantages that make Elvacore Technologies the preferred
             partner for industrial automation and academic research projects
             across India.
           </p>
@@ -65,7 +65,7 @@ export default function VisionPage() {
             {advantages.map((a, i) => (
               <div
                 key={a.title}
-                className="flex flex-col gap-3 rounded-xl border border-border bg-surface p-6"
+                className="flex h-full flex-col gap-3 rounded-xl border border-border bg-surface p-6"
               >
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-700 text-sm font-semibold text-white">
                   {String(i + 1).padStart(2, "0")}

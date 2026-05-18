@@ -27,11 +27,11 @@ export default function ContactPage() {
             Get in touch
           </p>
           <h1 className="mt-2 text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
-            Contact Elvacore
+            Contact Us
           </h1>
           <p className="mt-4 max-w-3xl text-base text-ink-muted sm:text-lg">
-            Talk to our engineering team about products, integration, training,
-            or annual maintenance — by phone, email, or the form below.
+            Get in touch with our engineering team for product enquiries,
+            quotations, system design support, or partnership discussions.
           </p>
         </Container>
       </section>
@@ -92,6 +92,14 @@ export default function ContactPage() {
                         Open in Google Maps <span aria-hidden>→</span>
                       </a>
                     </div>
+                  </dd>
+                </div>
+                <div>
+                  <dt className="text-xs font-semibold uppercase tracking-wide text-ink-muted">
+                    Business hours
+                  </dt>
+                  <dd className="mt-1 text-base text-ink">
+                    Monday to Saturday: 10:00 AM – 6:00 PM IST
                   </dd>
                 </div>
               </dl>

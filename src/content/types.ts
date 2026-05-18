@@ -30,8 +30,12 @@ export type Solution = {
   slug: string;
   title: string;
   type: "smart-city" | "smart-industry" | "education-training";
+  /** Short blurb shown on cards / homepage. */
   summary?: string;
+  /** Full description shown on the solution detail page. */
   body?: string;
+  /** Bullet list of representative applications for the detail page. */
+  keyApplications?: string[];
   heroImage?: string;
   relatedProducts?: string[];
 };

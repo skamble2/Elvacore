@@ -1,7 +1,6 @@
 import { Container } from "@/components/Container";
 import { CtaBanner } from "@/components/CtaBanner";
 import { AnimatedCounter } from "@/components/AnimatedCounter";
-import { ResponsiveCarousel } from "@/components/ResponsiveCarousel";
 
 export const metadata = {
   title: "Company Profile",
@@ -9,8 +8,8 @@ export const metadata = {
     "Elvacore Technologies LLP — Pune-based supplier of motion control and industrial automation products.",
 };
 
-const stats: { value: number | string; label: string }[] = [
-  { value: 9, label: "Total Products" },
+const stats: { value: number | string; label: string; suffix?: string }[] = [
+  { value: 8, label: "Total Products", suffix: "+" },
   { value: 5, label: "Product Categories" },
   { value: "2024", label: "Year Established" },
   { value: 3, label: "Designated Partners" },
@@ -20,6 +19,7 @@ const glance: { label: string; value: string }[] = [
   { label: "Legal Entity", value: "Limited Liability Partnership (LLP)" },
   { label: "Established", value: "June 2024" },
   { label: "GSTIN", value: "27AALFE8213A1ZQ" },
+  { label: "PAN", value: "AALFE8213A" },
   {
     label: "MSME Registration",
     value: "Registered under MSME, Government of India",
@@ -27,115 +27,46 @@ const glance: { label: string; value: string }[] = [
   {
     label: "Headquarters",
     value:
-      "Shop No. 2, Orange County Phase-II, IV S.No. 117/1 & 2, Pashan-Sus Road, Pashan, Pune - 411021",
+      "Shop No. 2, Orange County Phase-II, IV S.No. 117/1 & 2, Pashan-Sus Road, Pashan, Pune - 411021, Maharashtra, India",
   },
   {
     label: "Designated Partners",
-    value: "Rajwardhan Salunke · Suresh Sonawane · Vinit Benadikar",
+    value: "Rajwardhan Salunke · Vinit Benadikar · Suresh Sonawane",
   },
   {
-    label: "Tech Partner",
-    value: "Googol Technology (HK) Limited — Authorised Indian Distributor",
+    label: "Technology",
+    value:
+      "Precision motion control, servo drives, PLCs, AI training, and intelligent control systems",
+  },
+  {
+    label: "Partnerships",
+    value:
+      "Joint ventures and MOUs with engineering institutions and industry partners across India",
   },
   {
     label: "Services",
-    value: "Supply · Installation · AMC · Training · System Integration",
+    value:
+      "Product Supply · Installation · AMC · Technical Training · System Integration",
   },
-];
-
-type IndustryItem = { name: string; description: string };
-type IndustryGroup = {
-  heading: string;
-  caption: string;
-  items: IndustryItem[];
-};
-
-const industryGroups: IndustryGroup[] = [
-  {
-    heading: "Core industrial sectors",
-    caption: "Where precision motion meets heavy-duty manufacturing.",
-    items: [
-      {
-        name: "Microelectronics & Semiconductors",
-        description:
-          "Chip manufacturing, semiconductor component assembly, precision electronics fabrication.",
-      },
-      {
-        name: "Robotics & Automation",
-        description:
-          "Industrial robots, calibration systems, multi-axis automation lines.",
-      },
-      {
-        name: "CNC Machine Tools",
-        description:
-          "Precision machining, metal cutting, industrial fabrication, machining centres.",
-      },
-      {
-        name: "Industrial Production Automation",
-        description:
-          "Factory automation systems, PLCs, motion controllers, conveyor and assembly lines.",
-      },
-    ],
-  },
-  {
-    heading: "Electronics & processing",
-    caption: "High-throughput lines that demand consistent, repeatable motion.",
-    items: [
-      {
-        name: "Electronic Processing & Testing",
-        description:
-          "PCB testing, electronics assembly automation, functional test rigs.",
-      },
-      {
-        name: "Printing & Packaging",
-        description:
-          "High-speed printing machines, packaging lines, web-tension control.",
-      },
-      {
-        name: "Plastic Injection & Manufacturing",
-        description:
-          "Injection moulding systems, clamping force control, cycle-time optimisation.",
-      },
-    ],
-  },
-  {
-    heading: "Smart & emerging technology",
-    caption: "Industry 4.0, machine vision, and AI-led automation.",
-    items: [
-      {
-        name: "Smart Industry / Industry 4.0",
-        description:
-          "Motion control + industrial IoT integration, real-time data acquisition and analytics.",
-      },
-      {
-        name: "Machine Vision & AI Systems",
-        description:
-          "Vision-guided automation, defect inspection, AI-assisted quality control.",
-      },
-      {
-        name: "Smart City Applications",
-        description:
-          "Autonomous cleaning robots, environmental monitoring, smart waste management.",
-      },
-    ],
-  },
+  { label: "Phone", value: "+91 99606 64674" },
+  { label: "Email", value: "elvacoretechnologies@gmail.com" },
 ];
 
 const services: { title: string; description: string }[] = [
   {
     title: "Product Supply & Distribution",
     description:
-      "Authorised supply of Googol Technology products with genuine certification, competitive pricing, and efficient import logistics direct from Hong Kong.",
+      "Authorised supply of precision automation products with genuine certification, competitive pricing, and efficient import logistics.",
   },
   {
-    title: "Installation Support",
+    title: "Installation & Commissioning",
     description:
       "On-site and remote installation assistance for motion controllers, servo drives, PLCs, and complete automation systems — wiring, parameterisation, and first-run commissioning.",
   },
   {
     title: "Annual Maintenance Contracts (AMC)",
     description:
-      "Structured AMC packages covering scheduled inspections, firmware updates, and priority breakdown support to keep your systems at peak performance.",
+      "Structured AMC packages covering scheduled inspections, firmware updates, and priority breakdown support to keep your systems running at peak performance.",
   },
   {
     title: "Technical Training",
@@ -145,19 +76,9 @@ const services: { title: string; description: string }[] = [
   {
     title: "System Integration",
     description:
-      "End-to-end integration services, designing and building complete automation solutions combining motion controllers, servo drives, PLCs, sensors, and HMI software.",
+      "End-to-end integration services — designing and building complete automation solutions combining motion controllers, servo drives, PLCs, sensors, and HMI software.",
   },
 ];
-
-function IndustryCard({ item }: { item: IndustryItem }) {
-  return (
-    <div className="flex h-full flex-col gap-3 rounded-xl border border-border bg-surface p-5 sm:p-6">
-      <div className="h-1 w-10 rounded-full bg-accent-500" aria-hidden />
-      <h4 className="text-base font-semibold text-ink">{item.name}</h4>
-      <p className="text-sm text-ink-muted">{item.description}</p>
-    </div>
-  );
-}
 
 export default function AboutPage() {
   return (
@@ -171,20 +92,20 @@ export default function AboutPage() {
             Company Profile
           </h1>
           <p className="mt-4 max-w-3xl text-base text-ink-muted sm:text-lg">
-            Elvacore Technologies LLP is a Pune-based technology company
-            established in June 2024, specialising in the supply, distribution,
-            and application support of advanced motion control and industrial
-            automation products. We serve machine builders, system integrators,
-            academic institutions, and R&D laboratories across India.
+            Elvacore Technologies LLP is a Pune-based Limited Liability
+            Partnership established in June 2024, specialising in the supply,
+            distribution, and application support of advanced motion control
+            and industrial automation products. We serve machine builders,
+            system integrators, academic institutions, and R&D laboratories
+            across India.
           </p>
           <p className="mt-4 max-w-3xl text-base text-ink-muted sm:text-lg">
-            As the authorised Indian distribution partner of Googol Technology
-            (HK) Limited, Elvacore delivers precision automation hardware,
-            educational platforms, and AI-based intelligent control systems to
-            Indian industry and academia. Our team combines hands-on R&D
-            experience with deep application knowledge to deliver complete
-            automation solutions — from product supply through installation,
-            system integration, training, and ongoing maintenance.
+            Elvacore delivers precision automation hardware, educational
+            platforms, and AI-based intelligent control systems to Indian
+            industry and academia. Our team combines hands-on R&D experience
+            with deep application knowledge to deliver complete automation
+            solutions — from product supply through installation, system
+            integration, training, and ongoing maintenance.
           </p>
         </Container>
       </section>
@@ -197,7 +118,7 @@ export default function AboutPage() {
               <div key={s.label} className="text-center">
                 <dt className="bg-gradient-to-br from-brand-700 to-brand-900 bg-clip-text text-5xl font-semibold tracking-tight text-transparent sm:text-6xl">
                   {typeof s.value === "number" ? (
-                    <AnimatedCounter value={s.value} />
+                    <AnimatedCounter value={s.value} suffix={s.suffix} />
                   ) : (
                     s.value
                   )}
@@ -239,7 +160,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      {/* Services */}
+      {/* End-to-end services */}
       <section className="bg-surface-muted py-16 sm:py-20">
         <Container>
           <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
@@ -249,8 +170,8 @@ export default function AboutPage() {
             End-to-end automation support
           </h2>
           <p className="mt-3 max-w-2xl text-ink-muted">
-            From initial consultation and system design through to commissioning,
-            training, and long-term maintenance contracts.
+            From initial consultation and system design through to
+            commissioning, training, and long-term maintenance contracts.
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {services.map((s, i) => (
@@ -263,43 +184,6 @@ export default function AboutPage() {
                 </span>
                 <h3 className="text-base font-semibold text-ink">{s.title}</h3>
                 <p className="text-sm text-ink-muted">{s.description}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      {/* Industries served — grouped sections, each a carousel on mobile / grid on sm+ */}
-      <section className="py-16 sm:py-20">
-        <Container>
-          <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
-            Industries served
-          </p>
-          <h2 className="mt-2 text-2xl font-semibold tracking-tight text-brand-900 sm:text-3xl">
-            Where our products are deployed
-          </h2>
-          <p className="mt-3 max-w-2xl text-ink-muted">
-            From precision semiconductor fabrication and CNC machining to smart
-            city applications and AI-driven Industry 4.0 solutions.
-          </p>
-
-          <div className="mt-12 flex flex-col gap-12 sm:gap-14">
-            {industryGroups.map((group) => (
-              <div key={group.heading}>
-                <div className="flex flex-col gap-1 border-l-2 border-accent-500 pl-4 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
-                  <h3 className="text-lg font-semibold tracking-tight text-brand-900 sm:text-xl">
-                    {group.heading}
-                  </h3>
-                  <p className="text-sm text-ink-muted">{group.caption}</p>
-                </div>
-                <ResponsiveCarousel
-                  items={group.items}
-                  cols="sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-                  className="mt-6"
-                  itemKey={(item) => item.name}
-                >
-                  {(item) => <IndustryCard item={item} />}
-                </ResponsiveCarousel>
               </div>
             ))}
           </div>

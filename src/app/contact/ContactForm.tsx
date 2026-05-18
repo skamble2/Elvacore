@@ -2,7 +2,7 @@
 
 import { useId, useState } from "react";
 
-const TOPICS = [
+const SUBJECTS = [
   "General enquiry",
   "Product enquiry / quote",
   "Technical support",
@@ -25,8 +25,8 @@ export function ContactForm() {
     name: useId(),
     email: useId(),
     phone: useId(),
-    organization: useId(),
-    topic: useId(),
+    company: useId(),
+    subject: useId(),
     message: useId(),
   };
   const errors = state.status === "error" ? state.fieldErrors ?? {} : {};
@@ -45,7 +45,9 @@ export function ContactForm() {
     const name = String(formData.get("name") || "").trim();
     const email = String(formData.get("email") || "").trim();
     const message = String(formData.get("message") || "").trim();
-    const topic = String(formData.get("topic") || "General enquiry").trim();
+    const subject = String(
+      formData.get("subject") || "General enquiry",
+    ).trim();
 
     const fieldErrors: Record<string, string> = {};
     if (!name) {
@@ -91,7 +93,7 @@ export function ContactForm() {
     // Build a clean payload (avoid sending the honeypot to Web3Forms)
     const payload = new FormData();
     payload.append("access_key", accessKey);
-    payload.append("subject", `[Elvacore site] ${topic}`);
+    payload.append("subject", `[Elvacore site] ${subject}`);
     payload.append("from_name", "Elvacore website");
     payload.append("replyto", email);
     payload.append("Name", name);
@@ -101,10 +103,10 @@ export function ContactForm() {
       String(formData.get("phone") || "").trim() || "—",
     );
     payload.append(
-      "Organization",
-      String(formData.get("organization") || "").trim() || "—",
+      "Company",
+      String(formData.get("company") || "").trim() || "—",
     );
-    payload.append("Topic", topic);
+    payload.append("Subject", subject);
     payload.append("Message", message);
 
     try {
@@ -228,20 +230,20 @@ export function ContactForm() {
           error={errors.email}
         />
         <Field id={ids.phone} name="phone" label="Phone" type="tel" />
-        <Field id={ids.organization} name="organization" label="Organization" />
+        <Field id={ids.company} name="company" label="Company" />
       </div>
 
       <div className="flex flex-col gap-1.5">
-        <label htmlFor={ids.topic} className="text-sm font-medium text-ink">
-          Topic
+        <label htmlFor={ids.subject} className="text-sm font-medium text-ink">
+          Subject
         </label>
         <select
-          id={ids.topic}
-          name="topic"
-          defaultValue={TOPICS[0]}
+          id={ids.subject}
+          name="subject"
+          defaultValue={SUBJECTS[0]}
           className="h-11 rounded-md border border-border bg-surface px-3 text-sm text-ink"
         >
-          {TOPICS.map((t) => (
+          {SUBJECTS.map((t) => (
             <option key={t} value={t}>
               {t}
             </option>
@@ -272,7 +274,7 @@ export function ContactForm() {
         disabled={submitting}
         className="inline-flex h-11 items-center justify-center rounded-md bg-brand-700 px-5 text-sm font-medium text-white transition-colors hover:bg-brand-800 disabled:opacity-60"
       >
-        {submitting ? "Sending…" : "Send message"}
+        {submitting ? "Sending…" : "Send Message"}
       </button>
     </form>
   );

@@ -50,6 +50,10 @@ export default async function ProductsPage({ searchParams }: Props) {
           <p className="mt-3 max-w-2xl text-ink-muted">
             Industrial and educational control, motion, and servo products.
           </p>
+          <p className="mt-2 max-w-2xl text-sm text-ink-muted">
+            Eight precision automation products spanning motion control, PLC,
+            servo drives, AI training, and intelligent control.
+          </p>
         </Container>
       </section>
 
