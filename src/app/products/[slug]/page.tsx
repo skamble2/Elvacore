@@ -103,8 +103,8 @@ export default async function ProductDetailPage({ params }: Props) {
       <section className="py-12 sm:py-16">
         <Container>
           <div className="grid gap-10 md:grid-cols-2 md:gap-14">
-            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border bg-gradient-to-br from-brand-100 via-brand-50 to-accent-400/20">
-              {cover && (
+            <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-border bg-white">
+              {cover ? (
                 <Image
                   src={cover}
                   alt={product.title}
@@ -113,6 +113,8 @@ export default async function ProductDetailPage({ params }: Props) {
                   sizes="(min-width: 768px) 50vw, 100vw"
                   className="object-contain p-6"
                 />
+              ) : (
+                <div className="h-full w-full bg-gradient-to-br from-brand-100 via-brand-50 to-surface" />
               )}
             </div>
             <div>

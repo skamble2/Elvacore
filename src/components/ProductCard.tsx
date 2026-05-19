@@ -15,8 +15,8 @@ export function ProductCard({ product }: { product: Product }) {
       href={`/products/${product.slug}`}
       className="group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface transition-shadow hover:shadow-md"
     >
-      <div className="relative aspect-[4/3] w-full overflow-hidden bg-gradient-to-br from-brand-100 via-brand-50 to-accent-400/20">
-        {cover && (
+      <div className="relative aspect-[4/3] w-full overflow-hidden bg-white">
+        {cover ? (
           <Image
             src={cover}
             alt={product.title}
@@ -24,6 +24,8 @@ export function ProductCard({ product }: { product: Product }) {
             sizes="(min-width: 1280px) 320px, (min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
             className="object-contain p-4"
           />
+        ) : (
+          <div className="h-full w-full bg-gradient-to-br from-brand-100 via-brand-50 to-surface" />
         )}
       </div>
       <div className="flex flex-1 flex-col gap-1.5 p-5">
