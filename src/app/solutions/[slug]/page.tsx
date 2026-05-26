@@ -67,7 +67,7 @@ export default async function SolutionDetailPage({ params }: Props) {
           <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
             {typeLabels[solution.type] ?? "Solution"}
           </p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
             {solution.title}
           </h1>
           {solution.summary && (

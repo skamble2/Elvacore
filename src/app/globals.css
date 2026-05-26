@@ -1,43 +1,60 @@
 @import "tailwindcss";
 
 /* -----------------------------------------------------------
-   Design tokens — sampled from the Elvacore Company Profile v2
-   PDF. Primary palette is white + deep indigo-purple, with a
-   small red accent for eyebrows / badges / focus rings.
+   Design tokens — sampled from the ET Final Brand Guide.
+   Four official brand colours:
+     · Deep Navy Blue  #001F5B  → brand-700 (primary)
+     · Bright Cyan     #00A8E8  → accent-500 (accent)
+     · Deep Teal       #0D7377  → teal-500   (secondary)
+     · Dark Graphite   #2C3E50  → ink (body text)
    Tailwind v4 auto-generates utilities from @theme:
    --color-brand-700 → bg-brand-700, text-brand-700, etc.
    ----------------------------------------------------------- */
 @theme {
-  /* Brand — Deep Indigo (PDF source: brand-800 = #3D1878) */
-  --color-brand-50: #f4f0fb;
-  --color-brand-100: #e5dcf4;
-  --color-brand-200: #c8b5e8;
-  --color-brand-300: #a98dda;
-  --color-brand-400: #8b66cc;
-  --color-brand-500: #6b43ba;
-  --color-brand-600: #5530a0;
-  --color-brand-700: #432385;
-  --color-brand-800: #3d1878;
-  --color-brand-900: #2a0f58;
+  /* Brand — Deep Navy Blue (official: brand-700 = #001F5B) */
+  --color-brand-50: #ebf1fa;
+  --color-brand-100: #cfddf4;
+  --color-brand-200: #97b7e6;
+  --color-brand-300: #5589d1;
+  --color-brand-400: #1a5bb5;
+  --color-brand-500: #073d8c;
+  --color-brand-600: #003774;
+  --color-brand-700: #001f5b;
+  --color-brand-800: #001642;
+  --color-brand-900: #000b29;
 
-  /* Accent — Crimson Red (PDF source: accent-500 = #D72638)
-     Used SPARINGLY: eyebrows, focus rings, the thin top strip,
-     "Featured" badges. Never on large surfaces. */
-  --color-accent-50: #fce7e9;
-  --color-accent-100: #f8c8cd;
-  --color-accent-200: #f09199;
-  --color-accent-300: #e85b66;
-  --color-accent-400: #e04553;
-  --color-accent-500: #d72638;
-  --color-accent-600: #b71d2d;
-  --color-accent-700: #921824;
+  /* Accent — Bright Cyan (official: accent-500 = #00A8E8)
+     Used for eyebrows, focus rings, highlights, badges. Visible on both
+     white surfaces and the dark navy footer / banners. */
+  --color-accent-50: #e6f8fe;
+  --color-accent-100: #c0edfc;
+  --color-accent-200: #80dcf9;
+  --color-accent-300: #33c7f5;
+  --color-accent-400: #00b6f0;
+  --color-accent-500: #00a8e8;
+  --color-accent-600: #008cc1;
+  --color-accent-700: #006f9b;
+
+  /* Teal — Deep Teal (official: teal-500 = #0D7377)
+     Companion accent for gradient endpoints (cyan → teal) and hover states. */
+  --color-teal-400: #1aa1a6;
+  --color-teal-500: #0d7377;
+  --color-teal-600: #095c5f;
+
+  /* Danger — kept distinct from accent so error states still read as error.
+     (Form validation borders, error banners.) */
+  --color-danger-50: #fef2f2;
+  --color-danger-200: #fecaca;
+  --color-danger-500: #ef4444;
+  --color-danger-600: #dc2626;
+  --color-danger-700: #b91c1c;
 
   /* Neutrals */
   --color-surface: #ffffff;
-  --color-surface-muted: #f7f5fb;
-  --color-ink: #3c3c4e;
-  --color-ink-muted: #6e6e80;
-  --color-border: #e5e2ee;
+  --color-surface-muted: #f5f5f5;
+  --color-ink: #2c3e50;
+  --color-ink-muted: #5d6f80;
+  --color-border: #dce3e8;
 
   /* Typography */
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,

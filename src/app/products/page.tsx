@@ -44,7 +44,7 @@ export default async function ProductsPage({ searchParams }: Props) {
           <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
             Catalogue
           </p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-brand-900 sm:text-4xl">
             {activeCategoryTitle ? activeCategoryTitle : "Products"}
           </h1>
           <p className="mt-3 max-w-2xl text-ink-muted">

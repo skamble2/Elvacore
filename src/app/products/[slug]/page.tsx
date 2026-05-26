@@ -123,7 +123,7 @@ export default async function ProductDetailPage({ params }: Props) {
                   {category.title}
                 </p>
               )}
-              <h1 className="mt-2 text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl">
+              <h1 className="mt-2 text-3xl font-bold tracking-tight text-brand-900 sm:text-4xl">
                 {product.title}
               </h1>
               {product.summary && (

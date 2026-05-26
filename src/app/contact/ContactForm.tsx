@@ -191,13 +191,13 @@ export function ContactForm() {
         Send us a message
       </h2>
       <p className="-mt-2 text-sm text-ink-muted">
-        Fields marked <span className="text-accent-600">*</span> are required.
+        Fields marked <span className="text-danger-600">*</span> are required.
       </p>
 
       {state.status === "error" && state.message && (
         <p
           role="alert"
-          className="rounded-md border border-accent-200 bg-accent-50 px-4 py-3 text-sm text-accent-700"
+          className="rounded-md border border-danger-200 bg-danger-50 px-4 py-3 text-sm text-danger-700"
         >
           {state.message}
         </p>
@@ -253,7 +253,7 @@ export function ContactForm() {
 
       <div className="flex flex-col gap-1.5">
         <label htmlFor={ids.message} className="text-sm font-medium text-ink">
-          Message <span className="text-accent-600">*</span>
+          Message <span className="text-danger-600">*</span>
         </label>
         <textarea
           id={ids.message}
@@ -261,11 +261,11 @@ export function ContactForm() {
           required
           rows={6}
           className={`rounded-md border bg-surface px-3 py-2 text-sm text-ink ${
-            errors.message ? "border-accent-500" : "border-border"
+            errors.message ? "border-danger-500" : "border-border"
           }`}
         />
         {errors.message && (
-          <p className="text-xs text-accent-700">{errors.message}</p>
+          <p className="text-xs text-danger-700">{errors.message}</p>
         )}
       </div>
 
@@ -299,7 +299,7 @@ function Field({
     <div className="flex flex-col gap-1.5">
       <label htmlFor={id} className="text-sm font-medium text-ink">
         {label}
-        {required && <span className="ml-0.5 text-accent-600">*</span>}
+        {required && <span className="ml-0.5 text-danger-600">*</span>}
       </label>
       <input
         id={id}
@@ -307,10 +307,10 @@ function Field({
         type={type}
         required={required}
         className={`h-11 rounded-md border bg-surface px-3 text-sm text-ink ${
-          error ? "border-accent-500" : "border-border"
+          error ? "border-danger-500" : "border-border"
         }`}
       />
-      {error && <p className="text-xs text-accent-700">{error}</p>}
+      {error && <p className="text-xs text-danger-700">{error}</p>}
     </div>
   );
 }

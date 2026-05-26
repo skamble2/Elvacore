@@ -23,7 +23,7 @@ export default function Home() {
             <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
               Intelligent control & automation
             </p>
-            <h1 className="mt-3 text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
+            <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
               {home.heroTitle ?? "Elvacore Technologies"}
             </h1>
             {home.heroSubtitle && (

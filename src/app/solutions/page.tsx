@@ -18,7 +18,7 @@ export default function SolutionsPage() {
           <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
             Solutions
           </p>
-          <h1 className="mt-2 text-3xl font-semibold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
+          <h1 className="mt-2 text-3xl font-bold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
             Solutions across industries
           </h1>
           <p className="mt-4 max-w-3xl text-base text-ink-muted sm:text-lg">
