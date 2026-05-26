@@ -1,10 +1,12 @@
 import type { Product } from "./types";
+import { r2 } from "./r2";
 
 // Source: Elvacore Website Content Specification v1.0 (May 2026). Elvacore
 // Technologies LLP is the authorised Indian distributor and the copy below is
 // the verified text approved by the business owner.
 //
 // Image paths follow the convention public/images/products/<slug>/01.<ext>.
+// Datasheets live in R2 under the `datasheets/` prefix — see r2() helper.
 export const products: Product[] = [
   // ---------- Industrial · Motion Control ----------
   {
@@ -57,6 +59,7 @@ export const products: Product[] = [
       { label: "Compatible Motors", value: "Stepping motors and AC/DC servo motors" },
     ],
     images: ["/images/products/gts-pcie/01.jpeg"],
+    datasheet: r2("datasheets/GTS_PCIe-Datasheet.pdf"),
     featured: true,
     order: 1,
   },
@@ -178,6 +181,7 @@ export const products: Product[] = [
       { label: "Operating Temperature", value: "0°C to 55°C" },
     ],
     images: ["/images/products/gshd-servo-drive/01.jpeg"],
+    datasheet: r2("datasheets/GHSD-Servo.pdf"),
     featured: true,
     order: 1,
   },
@@ -207,6 +211,7 @@ export const products: Product[] = [
       "Corporate upskilling programmes",
     ],
     images: ["/images/products/ai-training-box/01.png"],
+    datasheet: r2("datasheets/AI-training-box.pdf"),
     featured: true,
     order: 1,
   },
@@ -234,6 +239,7 @@ export const products: Product[] = [
       "Mechatronics and servo system identification courses",
     ],
     images: ["/images/products/gsmt-servo-platform/01.jpg"],
+    datasheet: r2("datasheets/GSMT-series-datasheet.pdf"),
     order: 1,
   },
   {
@@ -258,6 +264,7 @@ export const products: Product[] = [
       "Feedback-system identification and observer design",
     ],
     images: ["/images/products/mls-magnetic-levitation/01.png"],
+    datasheet: r2("datasheets/MLS-Datasheet.pdf"),
     order: 2,
   },
   {
@@ -282,6 +289,7 @@ export const products: Product[] = [
       "Robotics and aerospace control research",
     ],
     images: ["/images/products/linear-inverted-pendulum/01.jpeg"],
+    datasheet: r2("datasheets/LinearInvertedPendulum-datasheet.pdf"),
     order: 3,
   },
 ];

@@ -45,3 +45,7 @@ next-env.d.ts
 AGENTS.md
 CLAUDE.md
 
+# Local copies of product datasheets — these are uploaded to Cloudflare R2,
+# so they shouldn't be bundled into the build or committed to the repo.
+/public/product-spec-docs/
+
