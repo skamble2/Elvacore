@@ -16,5 +16,11 @@ export function r2(key: string): string {
   }
   const trimmedBase = base.replace(/\/+$/, "");
   const trimmedKey = key.replace(/^\/+/, "");
-  return `${trimmedBase}/${trimmedKey}`;
+  // URL-encode each path segment so filenames with spaces or special chars
+  // (e.g. "Datasheet - iDEABOX Pro.pdf") resolve correctly on R2.
+  const encodedKey = trimmedKey
+    .split("/")
+    .map((segment) => encodeURIComponent(segment))
+    .join("/");
+  return `${trimmedBase}/${encodedKey}`;
 }
