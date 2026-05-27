@@ -101,6 +101,7 @@ export const products: Product[] = [
       },
     ],
     images: ["/images/products/gus-guc-embedded/01.jpeg"],
+    datasheet: r2("datasheets/GUC-T-Series-Datasheet.pdf"),
     order: 2,
   },
 
@@ -129,6 +130,7 @@ export const products: Product[] = [
       "Data acquisition and real-time processing",
     ],
     images: ["/images/products/ideabox-pro/01.jpeg"],
+    datasheet: r2("datasheets/iDEABOX-Pro-Datasheet.pdf"),
     featured: true,
     order: 1,
   },

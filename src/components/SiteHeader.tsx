@@ -19,10 +19,10 @@ export function SiteHeader() {
           className="flex items-center"
         >
           <Image
-            src="/Logo.jpg"
+            src="/logo-1.jpeg"
             alt="Elvacore"
-            width={4121}
-            height={2833}
+            width={1200}
+            height={800}
             priority
             sizes="(min-width: 1024px) 160px, 130px"
             className="h-9 w-auto sm:h-10"

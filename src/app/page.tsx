@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { products, site, solutions } from "@/content";
 import { Container } from "@/components/Container";
@@ -50,8 +51,15 @@ export default function Home() {
           </div>
           <div className="relative hidden md:block">
             <div className="absolute -inset-4 rounded-3xl bg-accent-400/10 blur-2xl" />
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-brand-100 bg-gradient-to-br from-brand-200 via-brand-100 to-accent-400/20">
-              <div className="absolute inset-0 opacity-50 [background-image:radial-gradient(circle_at_1px_1px,var(--color-brand-300)_1px,transparent_0)] [background-size:24px_24px]" />
+            <div className="relative aspect-[12/7] overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-lg">
+              <Image
+                src="/images/home-hero.jpeg"
+                alt="Elvacore precision motion control and automation"
+                fill
+                priority
+                sizes="(min-width: 1024px) 560px, 50vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </Container>
