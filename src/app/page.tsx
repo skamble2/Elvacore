@@ -17,18 +17,38 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-50 to-surface">
-        <Container className="grid items-center gap-10 py-16 sm:py-20 md:grid-cols-2 md:py-28">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-widest text-accent-600">
+      {/* Hero — full-width banner with background image */}
+      <section className="relative overflow-hidden bg-brand-900">
+        {/* Background image */}
+        <Image
+          src="/images/home-hero-1.jpeg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover object-center opacity-70"
+        />
+        {/* Gradient scrim — keeps left-side text crisp against the photo */}
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-gradient-to-r from-brand-900/95 via-brand-900/75 to-brand-900/30"
+        />
+        {/* Subtle cyan glow accent on the right */}
+        <div
+          aria-hidden
+          className="absolute -right-32 top-1/2 h-96 w-96 -translate-y-1/2 rounded-full bg-accent-500/20 blur-3xl"
+        />
+
+        <Container className="relative py-20 sm:py-24 md:py-32 lg:py-40">
+          <div className="max-w-2xl">
+            <p className="text-xs font-semibold uppercase tracking-widest text-accent-400">
               Intelligent control & automation
             </p>
-            <h1 className="mt-3 text-3xl font-bold tracking-tight text-brand-900 sm:text-4xl md:text-5xl">
+            <h1 className="mt-3 text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl lg:text-6xl">
               {home.heroTitle ?? "Elvacore Technologies"}
             </h1>
             {home.heroSubtitle && (
-              <p className="mt-4 max-w-xl text-base text-ink-muted sm:text-lg">
+              <p className="mt-5 max-w-xl text-base text-brand-100 sm:text-lg">
                 {home.heroSubtitle}
               </p>
             )}
@@ -36,32 +56,17 @@ export default function Home() {
               {home.heroCtaLabel && home.heroCtaHref && (
                 <Link
                   href={home.heroCtaHref}
-                  className="inline-flex h-11 items-center justify-center rounded-md bg-brand-700 px-5 text-sm font-medium text-white transition-colors hover:bg-brand-800"
+                  className="inline-flex h-11 items-center justify-center rounded-md bg-accent-500 px-5 text-sm font-semibold text-white shadow-lg shadow-accent-500/30 transition-colors hover:bg-accent-600"
                 >
                   {home.heroCtaLabel}
                 </Link>
               )}
               <Link
                 href="/contact"
-                className="inline-flex h-11 items-center justify-center rounded-md border border-border px-5 text-sm font-medium text-ink transition-colors hover:bg-surface-muted"
+                className="inline-flex h-11 items-center justify-center rounded-md border border-white/30 bg-white/5 px-5 text-sm font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/15"
               >
                 Contact us
               </Link>
-            </div>
-          </div>
-          <div className="relative hidden md:block">
-            <div className="absolute -inset-4 rounded-3xl bg-accent-400/10 blur-2xl" />
-            <div className="relative aspect-[5/3] overflow-hidden rounded-2xl border border-brand-100 bg-white p-6 shadow-lg sm:p-8">
-              <div className="relative h-full w-full">
-                <Image
-                  src="/images/home-hero.jpeg"
-                  alt="Elvacore precision motion control and automation"
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 520px, 50vw"
-                  className="object-contain"
-                />
-              </div>
             </div>
           </div>
         </Container>
