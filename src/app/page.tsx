@@ -51,14 +51,14 @@ export default function Home() {
           </div>
           <div className="relative hidden md:block">
             <div className="absolute -inset-4 rounded-3xl bg-accent-400/10 blur-2xl" />
-            <div className="relative aspect-[12/7] overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-lg">
+            <div className="relative aspect-[12/5] overflow-hidden rounded-2xl border border-brand-100 bg-white shadow-lg">
               <Image
                 src="/images/home-hero.jpeg"
                 alt="Elvacore precision motion control and automation"
                 fill
                 priority
                 sizes="(min-width: 1024px) 560px, 50vw"
-                className="object-cover"
+                className="object-contain"
               />
             </div>
           </div>
