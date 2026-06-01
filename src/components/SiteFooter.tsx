@@ -18,7 +18,9 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-brand-900 text-brand-100">
       <Container className="grid gap-10 py-14 sm:grid-cols-2 md:grid-cols-4">
         <div className="md:col-span-1">
-          <p className="text-base font-semibold text-white">Elvacore</p>
+          <p className="text-base font-semibold text-white">
+            Elvacore Technologies LLP
+          </p>
           {footer.tagline && (
             <p className="mt-2 max-w-xs text-sm text-brand-200">
               {footer.tagline}
@@ -77,7 +79,7 @@ export function SiteFooter() {
 
       <div className="border-t border-brand-800">
         <Container className="py-6 text-xs text-brand-300">
-          <p>© {year} Elvacore Technologies. All rights reserved.</p>
+          <p>© {year} Elvacore Technologies LLP. All rights reserved.</p>
         </Container>
       </div>
     </footer>
