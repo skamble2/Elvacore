@@ -17,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      {/* Hero — full-width banner with background image */}
+      {/* Hero, full-width banner with background image */}
       <section className="relative overflow-hidden bg-brand-900">
         {/* Background image */}
         <Image
@@ -28,7 +28,7 @@ export default function Home() {
           sizes="100vw"
           className="object-cover object-center opacity-70"
         />
-        {/* Gradient scrim — keeps left-side text crisp against the photo */}
+        {/* Gradient scrim, keeps left-side text crisp against the photo */}
         <div
           aria-hidden
           className="absolute inset-0 bg-gradient-to-r from-brand-900/95 via-brand-900/75 to-brand-900/30"
@@ -140,7 +140,7 @@ export default function Home() {
       <CtaBanner
         eyebrow="Get in touch"
         title="Looking for the right system for your application?"
-        description="Talk to our engineering team — we'll help spec the controllers, drives, and integration that fit your project."
+        description="Talk to our engineering team, we'll help spec the controllers, drives, and integration that fit your project."
         primaryLabel="Contact us"
         primaryHref="/contact"
         secondaryLabel="Browse products"

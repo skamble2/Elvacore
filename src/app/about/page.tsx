@@ -5,7 +5,7 @@ import { AnimatedCounter } from "@/components/AnimatedCounter";
 export const metadata = {
   title: "Company Profile",
   description:
-    "Elvacore Technologies LLP — Pune-based supplier of motion control and industrial automation products.",
+    "Elvacore Technologies LLP, Pune-based supplier of motion control and industrial automation products.",
 };
 
 const stats: { value: number | string; label: string; suffix?: string }[] = [
@@ -61,7 +61,7 @@ const services: { title: string; description: string }[] = [
   {
     title: "Installation & Commissioning",
     description:
-      "On-site and remote installation assistance for motion controllers, servo drives, PLCs, and complete automation systems — wiring, parameterisation, and first-run commissioning.",
+      "On-site and remote installation assistance for motion controllers, servo drives, PLCs, and complete automation systems, wiring, parameterisation, and first-run commissioning.",
   },
   {
     title: "Annual Maintenance Contracts (AMC)",
@@ -71,12 +71,12 @@ const services: { title: string; description: string }[] = [
   {
     title: "Technical Training",
     description:
-      "Hands-on training for engineers and technicians on motion control programming, servo tuning, PLC logic, and AI-based control platforms — at client sites or our Pune centre.",
+      "Hands-on training for engineers and technicians on motion control programming, servo tuning, PLC logic, and AI-based control platforms, at client sites or our Pune centre.",
   },
   {
     title: "System Integration",
     description:
-      "End-to-end integration services — designing and building complete automation solutions combining motion controllers, servo drives, PLCs, sensors, and HMI software.",
+      "End-to-end integration services, designing and building complete automation solutions combining motion controllers, servo drives, PLCs, sensors, and HMI software.",
   },
 ];
 
@@ -104,13 +104,13 @@ export default function AboutPage() {
             platforms, and AI-based intelligent control systems to Indian
             industry and academia. Our team combines hands-on R&D experience
             with deep application knowledge to deliver complete automation
-            solutions — from product supply through installation, system
+            solutions, from product supply through installation, system
             integration, training, and ongoing maintenance.
           </p>
         </Container>
       </section>
 
-      {/* Stats — animated counters with gradient text */}
+      {/* Stats, animated counters with gradient text */}
       <section className="border-b border-border bg-surface py-12 sm:py-16">
         <Container>
           <dl className="grid grid-cols-2 gap-x-6 gap-y-10 md:grid-cols-4">
@@ -193,7 +193,7 @@ export default function AboutPage() {
       <CtaBanner
         eyebrow="Get in touch"
         title="Ready to upgrade your automation?"
-        description="Talk to our engineers about your project — we'll spec, supply, install, and support the full solution."
+        description="Talk to our engineers about your project, we'll spec, supply, install, and support the full solution."
         primaryLabel="Contact us"
         primaryHref="/contact"
         secondaryLabel="Browse products"

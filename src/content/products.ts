@@ -6,7 +6,7 @@ import { r2 } from "./r2";
 // the verified text approved by the business owner.
 //
 // Image paths follow the convention public/images/products/<slug>/01.<ext>.
-// Datasheets live in R2 under the `datasheets/` prefix — see r2() helper.
+// Datasheets live in R2 under the `datasheets/` prefix, see r2() helper.
 export const products: Product[] = [
   // ---------- Industrial · Motion Control ----------
   {
@@ -117,7 +117,7 @@ export const products: Product[] = [
     description:
       "The iDEABOX Pro is an X86-architecture intelligent controller that integrates an industrial computer, motion controller, and PLC in a single compact unit. Running Windows-based real-time control software, it eliminates the need for a separate host PC, making it ideal for space-constrained machine cabinets. Designed for OEM machine builders requiring an integrated motion + logic controller solution.",
     features: [
-      "X86 processor architecture — runs Windows-based control software",
+      "X86 processor architecture, runs Windows-based control software",
       "Integrated motion controller + PLC in one unit",
       "Eliminates separate host PC requirement",
       "Compact industrial cabinet-mount design",
@@ -148,7 +148,7 @@ export const products: Product[] = [
       "The GSHD Series is a high-performance AC servo drive designed for precision motion applications. It features an advanced Feed-Forward Derivative (FFD) algorithm and time-domain auto-tuning to achieve fast dynamic response and high positional accuracy. With 26-bit absolute encoder resolution, anti-vibration control, and support for EtherCAT bus communication, the GSHD is suitable for demanding semiconductor, CNC, robotics, and automated assembly applications.",
     features: [
       "FFD (Feed-Forward Derivative) control algorithm for superior tracking accuracy",
-      "Time-domain automatic servo tuning — minimal manual parameterisation",
+      "Time-domain automatic servo tuning, minimal manual parameterisation",
       "26-bit absolute encoder interface for ultra-high-resolution position feedback",
       "Anti-vibration suppression algorithm for stable high-speed motion",
       "EtherCAT, CANopen, and RS-485 communication interfaces",
@@ -196,16 +196,16 @@ export const products: Product[] = [
     title: "AI Training Box",
     category: "ai-training",
     summary:
-      "AI training platform integrating CNC motion technology with deep learning — ideal for engineering labs and university courses.",
+      "AI training platform integrating CNC motion technology with deep learning, ideal for engineering labs and university courses.",
     description:
-      "The AI Training Box is a comprehensive hands-on platform designed for engineering colleges and corporate training centres. It combines industrial-grade motion control hardware with AI and deep learning software frameworks, enabling students and engineers to learn industrial AI — from basic machine learning to computer vision and motion-integrated AI quality control — using real CNC-grade motion hardware.",
+      "The AI Training Box is a comprehensive hands-on platform designed for engineering colleges and corporate training centres. It combines industrial-grade motion control hardware with AI and deep learning software frameworks, enabling students and engineers to learn industrial AI, from basic machine learning to computer vision and motion-integrated AI quality control, using real CNC-grade motion hardware.",
     features: [
       "Combines industrial motion control hardware with AI/deep learning software",
       "Suitable for engineering undergraduate and postgraduate AI courses",
       "Covers: machine learning fundamentals, computer vision, motion + AI integration",
       "Python and MATLAB compatible programming environments",
       "Includes structured course content and experiment guides",
-      "Plug-and-play setup — ready for lab deployment",
+      "Plug-and-play setup, ready for lab deployment",
     ],
     applications: [
       "AI/ML engineering laboratory courses",
@@ -228,7 +228,7 @@ export const products: Product[] = [
     summary:
       "DC servo PID training platform with three model variants for control coursework.",
     description:
-      "The GSMT Series is a DC servo PID experiment platform designed for undergraduate and postgraduate control engineering coursework. Available in three model configurations, it allows students to design, implement, and analyse PID controllers on a real servo system — observing step response, frequency response, and disturbance rejection in real time.",
+      "The GSMT Series is a DC servo PID experiment platform designed for undergraduate and postgraduate control engineering coursework. Available in three model configurations, it allows students to design, implement, and analyse PID controllers on a real servo system, observing step response, frequency response, and disturbance rejection in real time.",
     features: [
       "Real DC servo motor with encoder feedback for closed-loop PID experiments",
       "Three GSMT model variants with different load and inertia configurations",
@@ -255,7 +255,7 @@ export const products: Product[] = [
     description:
       "The Magnetic Levitation System (MLS) is an advanced control experiment platform that uses an electromagnetic coil to levitate a steel ball at a controlled height, measured by an LED and opto-electronic sensor. The highly nonlinear open-loop-unstable nature of the plant makes it an excellent real-world test bench for PID, state-space, H-infinity, and other advanced control strategies.",
     features: [
-      "Electromagnetic levitation of a steel ball — open-loop unstable plant",
+      "Electromagnetic levitation of a steel ball, open-loop unstable plant",
       "LED and opto-electronic gap sensor for real-time position measurement",
       "Ideal for PID, LQR, state-space, and advanced control experiments",
       "MATLAB / Simulink data acquisition and control interface",
@@ -276,14 +276,14 @@ export const products: Product[] = [
     title: "Linear Inverted Pendulum (GLIP Series)",
     category: "educational-intelligent-control",
     summary:
-      "GLIP series linear inverted pendulum platform — 1-stage to 4-stage configurations.",
+      "GLIP series linear inverted pendulum platform, 1-stage to 4-stage configurations.",
     description:
-      "The GLIP Series Linear Inverted Pendulum is a classical benchmark platform for control system design, testing, and education. A cart driven by a linear servo motor must balance one or more pendulum stages in the upright position — a challenging nonlinear, multi-variable control problem. Available in single-stage to four-stage configurations for increasing complexity.",
+      "The GLIP Series Linear Inverted Pendulum is a classical benchmark platform for control system design, testing, and education. A cart driven by a linear servo motor must balance one or more pendulum stages in the upright position, a challenging nonlinear, multi-variable control problem. Available in single-stage to four-stage configurations for increasing complexity.",
     features: [
       "Linear servo-driven cart with 1-stage to 4-stage pendulum configurations",
       "Classic benchmark for nonlinear control, LQR, and swingup experiments",
       "High-resolution encoders on cart and all pendulum joints",
-      "MATLAB / Simulink compatible — full model and experiment guides included",
+      "MATLAB / Simulink compatible, full model and experiment guides included",
       "Used in universities worldwide for control engineering research and teaching",
     ],
     applications: [

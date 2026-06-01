@@ -13,10 +13,10 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: "Elvacore Technologies",
-    template: "%s — Elvacore Technologies",
+    template: "%s, Elvacore Technologies",
   },
   description:
-    "Elvacore Technologies — intelligent control, automation, and embedded systems.",
+    "Elvacore Technologies, intelligent control, automation, and embedded systems.",
 };
 
 export default function RootLayout({

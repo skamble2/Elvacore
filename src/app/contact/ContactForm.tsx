@@ -36,7 +36,7 @@ export function ContactForm() {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
-    // Honeypot — bots fill hidden fields, real users don't.
+    // Honeypot, bots fill hidden fields, real users don't.
     if ((formData.get("company_website") as string)?.length) {
       setState({ status: "success" });
       return;
@@ -58,11 +58,11 @@ export function ContactForm() {
         "We'll need an email to send our reply to.";
     } else if (!EMAIL_RE.test(email)) {
       fieldErrors.email =
-        "That doesn't look like a valid email — please check the format (e.g. you@example.com).";
+        "That doesn't look like a valid email, please check the format (e.g. you@example.com).";
     }
     if (!message) {
       fieldErrors.message =
-        "Tell us a little about what you're looking for — even a sentence helps.";
+        "Tell us a little about what you're looking for, even a sentence helps.";
     } else if (message.length < 10) {
       fieldErrors.message =
         "Could you share a bit more detail? A few sentences help us route your enquiry to the right person.";
@@ -72,7 +72,7 @@ export function ContactForm() {
       setState({
         status: "error",
         message:
-          "A few details still need your attention — please review the highlighted fields above.",
+          "A few details still need your attention, please review the highlighted fields above.",
         fieldErrors,
       });
       return;
@@ -83,7 +83,7 @@ export function ContactForm() {
       setState({
         status: "error",
         message:
-          "Our message form is temporarily unavailable. In the meantime, please email us at elvacoretechnologies@gmail.com or call +91 99606 64674 — we'll get back to you straight away.",
+          "Our message form is temporarily unavailable. In the meantime, please email us at elvacoretechnologies@gmail.com or call +91 99606 64674, we'll get back to you straight away.",
       });
       return;
     }
@@ -126,7 +126,7 @@ export function ContactForm() {
         setState({
           status: "error",
           message:
-            "We couldn't deliver your message just now — sorry about that. Please try again in a moment, or email us at elvacoretechnologies@gmail.com / call +91 99606 64674 and we'll pick it up from there.",
+            "We couldn't deliver your message just now, sorry about that. Please try again in a moment, or email us at elvacoretechnologies@gmail.com / call +91 99606 64674 and we'll pick it up from there.",
         });
       }
     } catch (err) {
@@ -134,7 +134,7 @@ export function ContactForm() {
       setState({
         status: "error",
         message:
-          "Looks like there's a connection issue on our end. Please check your internet and try once more — or reach us directly at elvacoretechnologies@gmail.com / +91 99606 64674.",
+          "Looks like there's a connection issue on our end. Please check your internet and try once more, or reach us directly at elvacoretechnologies@gmail.com / +91 99606 64674.",
       });
     }
   }
@@ -158,7 +158,7 @@ export function ContactForm() {
           </svg>
         </div>
         <h3 className="mt-4 text-lg font-semibold text-brand-900">
-          Thanks for reaching out — your message is on its way.
+          Thanks for reaching out, your message is on its way.
         </h3>
         <p className="mt-2 text-ink-muted">
           A member of our team will reply to the email you provided, usually
@@ -203,7 +203,7 @@ export function ContactForm() {
         </p>
       )}
 
-      {/* Honeypot — hidden from users, attractive to bots */}
+      {/* Honeypot, hidden from users, attractive to bots */}
       <input
         type="text"
         name="company_website"

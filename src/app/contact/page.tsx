@@ -5,7 +5,7 @@ import { ContactForm } from "./ContactForm";
 export const metadata = {
   title: "Contact us",
   description:
-    "Talk to Elvacore Technologies — phone, email, address, and message form.",
+    "Talk to Elvacore Technologies, phone, email, address, and message form.",
 };
 
 const MAP_QUERY = encodeURIComponent(
@@ -107,7 +107,7 @@ export default function ContactPage() {
 
             <div className="overflow-hidden rounded-xl border border-border">
               <iframe
-                title="Elvacore Technologies — office location"
+                title="Elvacore Technologies, office location"
                 src={MAP_EMBED_SRC}
                 className="block h-72 w-full sm:h-80 lg:h-full"
                 loading="lazy"

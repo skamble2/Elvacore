@@ -93,6 +93,6 @@ export const site: SiteConfig = {
     ],
     aboutHeading: "Your partner for precision motion control",
     aboutBody:
-      "Elvacore Technologies LLP is a Pune-based Limited Liability Partnership established in June 2024, specialising in the supply, distribution, and application support of advanced motion control and industrial automation products. We serve machine builders, system integrators, academic institutions, and R&D laboratories across India — covering motion control, servo drives, PLCs, AI training platforms, and intelligent control systems. Our team combines hands-on R&D experience with deep application knowledge to deliver complete automation solutions from product supply through installation, training, and ongoing maintenance.",
+      "Elvacore Technologies LLP is a Pune-based Limited Liability Partnership established in June 2024, specialising in the supply, distribution, and application support of advanced motion control and industrial automation products. We serve machine builders, system integrators, academic institutions, and R&D laboratories across India, covering motion control, servo drives, PLCs, AI training platforms, and intelligent control systems. Our team combines hands-on R&D experience with deep application knowledge to deliver complete automation solutions from product supply through installation, training, and ongoing maintenance.",
   },
 };

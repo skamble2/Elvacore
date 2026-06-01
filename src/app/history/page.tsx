@@ -4,7 +4,7 @@ import { CtaBanner } from "@/components/CtaBanner";
 export const metadata = {
   title: "History",
   description:
-    "Origins of Elvacore Technologies — founded in Pune, June 2024.",
+    "Origins of Elvacore Technologies, founded in Pune, June 2024.",
 };
 
 export default function HistoryPage() {
@@ -36,7 +36,7 @@ export default function HistoryPage() {
               Elvacore Technologies LLP was established in June 2024 as a
               Limited Liability Partnership headquartered in Pashan, Pune. The
               company was founded by professionals with deep roots in
-              industrial automation and robotics — drawing on over two decades
+              industrial automation and robotics, drawing on over two decades
               of hands-on R&D, training, and systems integration experience in
               the Indian automation sector.
             </p>
@@ -44,14 +44,14 @@ export default function HistoryPage() {
               From the outset, Elvacore's mission has been to make world-class
               precision automation hardware, educational platforms, and
               AI-based intelligent control systems accessible to Indian
-              industry and academia — with the genuine authorised supply
+              industry and academia, with the genuine authorised supply
               chain, application expertise, and end-to-end support that Indian
               machine builders and institutions require.
             </p>
             <p>
               Within months of incorporation, Elvacore secured authorised
               Indian distribution rights for a leading Asia-Pacific
-              motion-control manufacturer — combining local presence and
+              motion-control manufacturer, combining local presence and
               Indian-market application knowledge with one of the most
               established motion-control product portfolios in the region.
             </p>

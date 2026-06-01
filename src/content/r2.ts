@@ -11,7 +11,7 @@ export function r2(key: string): string {
   const base = process.env.NEXT_PUBLIC_R2_PUBLIC_URL;
   if (!base) {
     throw new Error(
-      "NEXT_PUBLIC_R2_PUBLIC_URL is not set — add it to .env.local before referencing R2 files.",
+      "NEXT_PUBLIC_R2_PUBLIC_URL is not set, add it to .env.local before referencing R2 files.",
     );
   }
   const trimmedBase = base.replace(/\/+$/, "");

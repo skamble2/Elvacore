@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* -----------------------------------------------------------
-   Design tokens — sampled from the ET Final Brand Guide.
+   Design tokens, sampled from the ET Final Brand Guide.
    Four official brand colours:
      · Deep Navy Blue  #001F5B  → brand-700 (primary)
      · Bright Cyan     #00A8E8  → accent-500 (accent)
@@ -11,7 +11,7 @@
    --color-brand-700 → bg-brand-700, text-brand-700, etc.
    ----------------------------------------------------------- */
 @theme {
-  /* Brand — Deep Navy Blue (official: brand-700 = #001F5B) */
+  /* Brand, Deep Navy Blue (official: brand-700 = #001F5B) */
   --color-brand-50: #ebf1fa;
   --color-brand-100: #cfddf4;
   --color-brand-200: #97b7e6;
@@ -23,7 +23,7 @@
   --color-brand-800: #001642;
   --color-brand-900: #000b29;
 
-  /* Accent — Bright Cyan (official: accent-500 = #00A8E8)
+  /* Accent, Bright Cyan (official: accent-500 = #00A8E8)
      Used for eyebrows, focus rings, highlights, badges. Visible on both
      white surfaces and the dark navy footer / banners. */
   --color-accent-50: #e6f8fe;
@@ -35,13 +35,13 @@
   --color-accent-600: #008cc1;
   --color-accent-700: #006f9b;
 
-  /* Teal — Deep Teal (official: teal-500 = #0D7377)
+  /* Teal, Deep Teal (official: teal-500 = #0D7377)
      Companion accent for gradient endpoints (cyan → teal) and hover states. */
   --color-teal-400: #1aa1a6;
   --color-teal-500: #0d7377;
   --color-teal-600: #095c5f;
 
-  /* Danger — kept distinct from accent so error states still read as error.
+  /* Danger, kept distinct from accent so error states still read as error.
      (Form validation borders, error banners.) */
   --color-danger-50: #fef2f2;
   --color-danger-200: #fecaca;

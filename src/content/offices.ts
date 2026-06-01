@@ -2,7 +2,7 @@ import type { Office } from "./types";
 
 export const offices: Office[] = [
   {
-    name: "Elvacore Technologies LLP — HQ",
+    name: "Elvacore Technologies LLP, HQ",
     type: "office",
     country: "India",
     region: "Asia",

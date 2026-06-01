@@ -16,7 +16,7 @@ const advantages = [
   {
     title: "End-to-End Solution Provider",
     description:
-      "From motion control cards and servo drives to AI training rigs, we cover the complete automation spectrum — supply, installation, integration, training, and AMC.",
+      "From motion control cards and servo drives to AI training rigs, we cover the complete automation spectrum, supply, installation, integration, training, and AMC.",
   },
   {
     title: "MSME Registered",
@@ -26,17 +26,17 @@ const advantages = [
   {
     title: "Deep Technical Expertise",
     description:
-      "Hands-on R&D and industrial automation experience to support system design, servo commissioning, PLC programming, and field troubleshooting — backed by over two decades of domain knowledge.",
+      "Hands-on R&D and industrial automation experience to support system design, servo commissioning, PLC programming, and field troubleshooting, backed by over two decades of domain knowledge.",
   },
   {
     title: "Academic & Industrial Focus",
     description:
-      "Dedicated product lines for both industrial machine builders and engineering institutions — bridging the gap between education and real-world automation practice.",
+      "Dedicated product lines for both industrial machine builders and engineering institutions, bridging the gap between education and real-world automation practice.",
   },
   {
     title: "Proven Global Partnership",
     description:
-      "Backed by internationally award-winning motion-control technology — products deployed across 30+ countries with a heritage of academic and industrial innovation since the late 1990s.",
+      "Backed by internationally award-winning motion-control technology, products deployed across 30+ countries with a heritage of academic and industrial innovation since the late 1990s.",
   },
 ];
 
@@ -81,7 +81,7 @@ export default function VisionPage() {
       <CtaBanner
         eyebrow="Get in touch"
         title="Ready to start your next project?"
-        description="From spec to commissioning to AMC — talk to our team about how Elvacore can support your automation roadmap."
+        description="From spec to commissioning to AMC, talk to our team about how Elvacore can support your automation roadmap."
         primaryLabel="Contact us"
         primaryHref="/contact"
         secondaryLabel="Browse products"

@@ -23,7 +23,7 @@ export default function SolutionsPage() {
           </h1>
           <p className="mt-4 max-w-3xl text-base text-ink-muted sm:text-lg">
             Tailored systems combining precision automation products into
-            complete, deployment-ready solutions — designed, supplied, and
+            complete, deployment-ready solutions, designed, supplied, and
             supported by Elvacore.
           </p>
         </Container>

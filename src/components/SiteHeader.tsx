@@ -15,7 +15,7 @@ export function SiteHeader() {
       <Container className="flex h-16 items-center justify-between">
         <Link
           href="/"
-          aria-label="Elvacore — home"
+          aria-label="Elvacore, home"
           className="flex items-center"
         >
           <Image
